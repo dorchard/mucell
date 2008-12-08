@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sbml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" level="2" version="3" xmlns="http://www.sbml.org/sbml/level2">
+  <model>
+    <listOfSpecies>
+      <species id="species1" initialAmount="4" initialConcentration="7" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell">
+          <xPosition value="2" />
+          <yPosition value="3" />
+        </annotation>
+      </species>
+      <species id="species2" initialAmount="1" initialConcentration="3" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell">
+          <xPosition value="5" />
+          <yPosition value="6" />
+        </annotation>
+      </species>
+    </listOfSpecies>
+    <listOfParameters />
+    <listOfReactions />
+    <listOfComponents />
+  </model>
+</sbml>

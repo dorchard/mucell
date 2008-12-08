@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sbml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" level="2" version="3" xmlns="http://www.sbml.org/sbml/level2">
+  <model id="Smallest_chemical_reaction_system_with_Hopf_bifurcation">
+    <listOfCompartments>
+      <compartment id="compartment" spatialDimensions="3" size="1" constant="true" />
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="X" compartment="compartment" initialAmount="2.5" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" />
+      <species id="A" compartment="compartment" initialAmount="1" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" />
+      <species id="Y" compartment="compartment" initialAmount="2.5" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" />
+      <species id="Z" compartment="compartment" initialAmount="2.5" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" />
+      <species id="_void_" compartment="compartment" initialAmount="0" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" />
+    </listOfSpecies>
+    <listOfParameters />
+    <listOfReactions>
+      <reaction id="R1" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+          <speciesReference species="A" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="X" stoichiometry="2" />
+        </listOfProducts>
+        <listOfModifiers />
+        <kineticLaw formula="k_1*X*A">
+          <listOfParameters>
+            <parameter id="k_1" value="3.2" constant="true" />
+          </listOfParameters>
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="100" />
+          <yPosition value="102.2" />
+        </annotation>
+      </reaction>
+      <reaction id="R2" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+          <speciesReference species="Y" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="A" stoichiometry="1" />
+          <speciesReference species="Y" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers />
+        <kineticLaw formula="k_2*X*Y">
+          <listOfParameters>
+            <parameter id="k_2" value="1" constant="true" />
+          </listOfParameters>
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="200.2" />
+          <yPosition value="135" />
+        </annotation>
+      </reaction>
+      <reaction id="R3" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Z" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers />
+        <kineticLaw formula="k_3*X">
+          <listOfParameters>
+            <parameter id="k_3" value="1" constant="true" />
+          </listOfParameters>
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="642" />
+          <yPosition value="312.3" />
+        </annotation>
+      </reaction>
+      <reaction id="R4" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Z" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Y" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers />
+        <kineticLaw formula="k_4*Z">
+          <listOfParameters>
+            <parameter id="k_4" value="1" constant="true" />
+          </listOfParameters>
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="325.5" />
+          <yPosition value="753.7" />
+        </annotation>
+      </reaction>
+      <reaction id="R5" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Y" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="_void_" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers />
+        <kineticLaw formula="k_5*Y">
+          <listOfParameters>
+            <parameter id="k_5" value="1" constant="true" />
+          </listOfParameters>
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="110.9" />
+          <yPosition value="752.1" />
+        </annotation>
+      </reaction>
+    </listOfReactions>
+    <listOfComponents />
+  </model>
+</sbml>

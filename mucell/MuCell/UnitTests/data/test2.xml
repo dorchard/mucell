@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by Gepasi 3.30 on September 03, 2002, 23:19 -->
+<sbml xmlns="http://www.sbml.org/sbml/level1" level="1" version="1">
+	<model name="Smallest_chemical_reaction_system_with_Hopf_bifurcation">
+		<notes>
+			<body xmlns="http://www.w3.org/1999/xhtml">
+				<p>Wilhelm, T. &amp; Heinrich, R. (1995) &quot;Smallest chemical reaction system with </p>
+				<p>Hopf bifurcation&quot; J. Math. Chem. 17, 1-14</p>
+			</body>
+		</notes>
+	</model>
+</sbml>

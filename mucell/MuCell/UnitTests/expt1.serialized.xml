@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Experiment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="experiment1" Id="0">
+  <simulations>
+    <Simulation Name="simulation1">
+      <SimulationResults FilePath="some-file-path">
+        <StateSnapshots>
+          <StateSnapshot>
+            <Cells>
+              <CellInstance GroupID="0">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="0" y="1" z="2" />
+                  <Velocity x="0" y="5" z="3" />
+                  <Volume x="10" y="0" z="0" />
+                  <Orientation x="2" y="0" z="0" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="1">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="1" y="1" z="3" />
+                  <Velocity x="0" y="6" z="3" />
+                  <Volume x="11" y="0" z="0" />
+                  <Orientation x="2" y="3" z="4" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="2">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="2" y="1" z="4" />
+                  <Velocity x="0" y="7" z="3" />
+                  <Volume x="12" y="0" z="0" />
+                  <Orientation x="2" y="6" z="8" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="3">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="3" y="1" z="5" />
+                  <Velocity x="0" y="8" z="3" />
+                  <Volume x="13" y="0" z="0" />
+                  <Orientation x="2" y="9" z="12" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="4">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="4" y="1" z="6" />
+                  <Velocity x="0" y="9" z="3" />
+                  <Volume x="14" y="0" z="0" />
+                  <Orientation x="2" y="12" z="16" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="5">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="5" y="1" z="7" />
+                  <Velocity x="0" y="10" z="3" />
+                  <Volume x="15" y="0" z="0" />
+                  <Orientation x="2" y="15" z="20" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="6">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="6" y="1" z="8" />
+                  <Velocity x="0" y="11" z="3" />
+                  <Volume x="16" y="0" z="0" />
+                  <Orientation x="2" y="18" z="24" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="7">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="7" y="1" z="9" />
+                  <Velocity x="0" y="12" z="3" />
+                  <Volume x="17" y="0" z="0" />
+                  <Orientation x="2" y="21" z="28" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="8">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="8" y="1" z="10" />
+                  <Velocity x="0" y="13" z="3" />
+                  <Volume x="18" y="0" z="0" />
+                  <Orientation x="2" y="24" z="32" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="9">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="9" y="1" z="11" />
+                  <Velocity x="0" y="14" z="3" />
+                  <Volume x="19" y="0" z="0" />
+                  <Orientation x="2" y="27" z="36" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+            </Cells>
+            <SimulationEnvironment Viscosity="1">
+              <volume x="0" y="0" z="0" />
+              <Boundary Shape="Cuboid" Radius="40" Height="80" Width="80" Depth="80" />
+            </SimulationEnvironment>
+          </StateSnapshot>
+          <StateSnapshot>
+            <Cells>
+              <CellInstance GroupID="0">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="0" y="2" z="2" />
+                  <Velocity x="4" y="5" z="4" />
+                  <Volume x="10" y="14" z="15" />
+                  <Orientation x="3" y="0" z="0" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="1">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="1" y="2" z="3" />
+                  <Velocity x="4" y="6" z="4" />
+                  <Volume x="11" y="14" z="15" />
+                  <Orientation x="3" y="3" z="4" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="2">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="2" y="2" z="4" />
+                  <Velocity x="4" y="7" z="4" />
+                  <Volume x="12" y="14" z="15" />
+                  <Orientation x="3" y="6" z="8" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="3">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="3" y="2" z="5" />
+                  <Velocity x="4" y="8" z="4" />
+                  <Volume x="13" y="14" z="15" />
+                  <Orientation x="3" y="9" z="12" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="4">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="4" y="2" z="6" />
+                  <Velocity x="4" y="9" z="4" />
+                  <Volume x="14" y="14" z="15" />
+                  <Orientation x="3" y="12" z="16" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="5">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="5" y="2" z="7" />
+                  <Velocity x="4" y="10" z="4" />
+                  <Volume x="15" y="14" z="15" />
+                  <Orientation x="3" y="15" z="20" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="6">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="6" y="2" z="8" />
+                  <Velocity x="4" y="11" z="4" />
+                  <Volume x="16" y="14" z="15" />
+                  <Orientation x="3" y="18" z="24" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="7">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="7" y="2" z="9" />
+                  <Velocity x="4" y="12" z="4" />
+                  <Volume x="17" y="14" z="15" />
+                  <Orientation x="3" y="21" z="28" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="8">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="8" y="2" z="10" />
+                  <Velocity x="4" y="13" z="4" />
+                  <Volume x="18" y="14" z="15" />
+                  <Orientation x="3" y="24" z="32" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="9">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="9" y="2" z="11" />
+                  <Velocity x="4" y="14" z="4" />
+                  <Volume x="19" y="14" z="15" />
+                  <Orientation x="3" y="27" z="36" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+            </Cells>
+            <SimulationEnvironment Viscosity="1">
+              <volume x="10" y="14" z="15" />
+              <Boundary Shape="Cuboid" Radius="40" Height="80" Width="80" Depth="80" />
+            </SimulationEnvironment>
+          </StateSnapshot>
+          <StateSnapshot>
+            <Cells>
+              <CellInstance GroupID="0">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="0" y="3" z="2" />
+                  <Velocity x="8" y="5" z="5" />
+                  <Volume x="10" y="28" z="30" />
+                  <Orientation x="4" y="0" z="0" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="1">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="1" y="3" z="3" />
+                  <Velocity x="8" y="6" z="5" />
+                  <Volume x="11" y="28" z="30" />
+                  <Orientation x="4" y="3" z="4" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="2">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="2" y="3" z="4" />
+                  <Velocity x="8" y="7" z="5" />
+                  <Volume x="12" y="28" z="30" />
+                  <Orientation x="4" y="6" z="8" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="3">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="3" y="3" z="5" />
+                  <Velocity x="8" y="8" z="5" />
+                  <Volume x="13" y="28" z="30" />
+                  <Orientation x="4" y="9" z="12" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="4">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="4" y="3" z="6" />
+                  <Velocity x="8" y="9" z="5" />
+                  <Volume x="14" y="28" z="30" />
+                  <Orientation x="4" y="12" z="16" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="5">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="5" y="3" z="7" />
+                  <Velocity x="8" y="10" z="5" />
+                  <Volume x="15" y="28" z="30" />
+                  <Orientation x="4" y="15" z="20" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="6">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="6" y="3" z="8" />
+                  <Velocity x="8" y="11" z="5" />
+                  <Volume x="16" y="28" z="30" />
+                  <Orientation x="4" y="18" z="24" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="7">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="7" y="3" z="9" />
+                  <Velocity x="8" y="12" z="5" />
+                  <Volume x="17" y="28" z="30" />
+                  <Orientation x="4" y="21" z="28" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="8">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="8" y="3" z="10" />
+                  <Velocity x="8" y="13" z="5" />
+                  <Volume x="18" y="28" z="30" />
+                  <Orientation x="4" y="24" z="32" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="9">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="9" y="3" z="11" />
+                  <Velocity x="8" y="14" z="5" />
+                  <Volume x="19" y="28" z="30" />
+                  <Orientation x="4" y="27" z="36" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+            </Cells>
+            <SimulationEnvironment Viscosity="1">
+              <volume x="20" y="28" z="30" />
+              <Boundary Shape="Cuboid" Radius="40" Height="80" Width="80" Depth="80" />
+            </SimulationEnvironment>
+          </StateSnapshot>
+          <StateSnapshot>
+            <Cells>
+              <CellInstance GroupID="0">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="0" y="4" z="2" />
+                  <Velocity x="12" y="5" z="6" />
+                  <Volume x="10" y="42" z="45" />
+                  <Orientation x="5" y="0" z="0" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="1">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="1" y="4" z="3" />
+                  <Velocity x="12" y="6" z="6" />
+                  <Volume x="11" y="42" z="45" />
+                  <Orientation x="5" y="3" z="4" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="2">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="2" y="4" z="4" />
+                  <Velocity x="12" y="7" z="6" />
+                  <Volume x="12" y="42" z="45" />
+                  <Orientation x="5" y="6" z="8" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="3">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="3" y="4" z="5" />
+                  <Velocity x="12" y="8" z="6" />
+                  <Volume x="13" y="42" z="45" />
+                  <Orientation x="5" y="9" z="12" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="4">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="4" y="4" z="6" />
+                  <Velocity x="12" y="9" z="6" />
+                  <Volume x="14" y="42" z="45" />
+                  <Orientation x="5" y="12" z="16" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="5">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="5" y="4" z="7" />
+                  <Velocity x="12" y="10" z="6" />
+                  <Volume x="15" y="42" z="45" />
+                  <Orientation x="5" y="15" z="20" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="6">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="6" y="4" z="8" />
+                  <Velocity x="12" y="11" z="6" />
+                  <Volume x="16" y="42" z="45" />
+                  <Orientation x="5" y="18" z="24" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="7">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="7" y="4" z="9" />
+                  <Velocity x="12" y="12" z="6" />
+                  <Volume x="17" y="42" z="45" />
+                  <Orientation x="5" y="21" z="28" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="8">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="8" y="4" z="10" />
+                  <Velocity x="12" y="13" z="6" />
+                  <Volume x="18" y="42" z="45" />
+                  <Orientation x="5" y="24" z="32" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="9">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="9" y="4" z="11" />
+                  <Velocity x="12" y="14" z="6" />
+                  <Volume x="19" y="42" z="45" />
+                  <Orientation x="5" y="27" z="36" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+            </Cells>
+            <SimulationEnvironment Viscosity="1">
+              <volume x="30" y="42" z="45" />
+              <Boundary Shape="Cuboid" Radius="40" Height="80" Width="80" Depth="80" />
+            </SimulationEnvironment>
+          </StateSnapshot>
+          <StateSnapshot>
+            <Cells>
+              <CellInstance GroupID="0">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="0" y="5" z="2" />
+                  <Velocity x="16" y="5" z="7" />
+                  <Volume x="10" y="56" z="60" />
+                  <Orientation x="6" y="0" z="0" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="1">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="1" y="5" z="3" />
+                  <Velocity x="16" y="6" z="7" />
+                  <Volume x="11" y="56" z="60" />
+                  <Orientation x="6" y="3" z="4" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="2">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="2" y="5" z="4" />
+                  <Velocity x="16" y="7" z="7" />
+                  <Volume x="12" y="56" z="60" />
+                  <Orientation x="6" y="6" z="8" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="3">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="3" y="5" z="5" />
+                  <Velocity x="16" y="8" z="7" />
+                  <Volume x="13" y="56" z="60" />
+                  <Orientation x="6" y="9" z="12" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="4">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="4" y="5" z="6" />
+                  <Velocity x="16" y="9" z="7" />
+                  <Volume x="14" y="56" z="60" />
+                  <Orientation x="6" y="12" z="16" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="5">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="5" y="5" z="7" />
+                  <Velocity x="16" y="10" z="7" />
+                  <Volume x="15" y="56" z="60" />
+                  <Orientation x="6" y="15" z="20" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="6">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="6" y="5" z="8" />
+                  <Velocity x="16" y="11" z="7" />
+                  <Volume x="16" y="56" z="60" />
+                  <Orientation x="6" y="18" z="24" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="7">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="7" y="5" z="9" />
+                  <Velocity x="16" y="12" z="7" />
+                  <Volume x="17" y="56" z="60" />
+                  <Orientation x="6" y="21" z="28" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="8">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="8" y="5" z="10" />
+                  <Velocity x="16" y="13" z="7" />
+                  <Volume x="18" y="56" z="60" />
+                  <Orientation x="6" y="24" z="32" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+              <CellInstance GroupID="9">
+                <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+                <CellInstanceDefinition name="cellDef1" />
+                <CellInstanceSpatialContext>
+                  <Position x="9" y="5" z="11" />
+                  <Velocity x="16" y="14" z="7" />
+                  <Volume x="19" y="56" z="60" />
+                  <Orientation x="6" y="27" z="36" />
+                </CellInstanceSpatialContext>
+              </CellInstance>
+            </Cells>
+            <SimulationEnvironment Viscosity="1">
+              <volume x="40" y="56" z="60" />
+              <Boundary Shape="Cuboid" Radius="40" Height="80" Width="80" Depth="80" />
+            </SimulationEnvironment>
+          </StateSnapshot>
+        </StateSnapshots>
+        <CurrentState>
+          <Cells>
+            <CellInstance GroupID="0">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="0" y="5" z="2" />
+                <Velocity x="16" y="5" z="7" />
+                <Volume x="10" y="56" z="60" />
+                <Orientation x="6" y="0" z="0" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="1">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="1" y="5" z="3" />
+                <Velocity x="16" y="6" z="7" />
+                <Volume x="11" y="56" z="60" />
+                <Orientation x="6" y="3" z="4" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="2">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="2" y="5" z="4" />
+                <Velocity x="16" y="7" z="7" />
+                <Volume x="12" y="56" z="60" />
+                <Orientation x="6" y="6" z="8" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="3">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="3" y="5" z="5" />
+                <Velocity x="16" y="8" z="7" />
+                <Volume x="13" y="56" z="60" />
+                <Orientation x="6" y="9" z="12" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="4">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="4" y="5" z="6" />
+                <Velocity x="16" y="9" z="7" />
+                <Volume x="14" y="56" z="60" />
+                <Orientation x="6" y="12" z="16" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="5">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="5" y="5" z="7" />
+                <Velocity x="16" y="10" z="7" />
+                <Volume x="15" y="56" z="60" />
+                <Orientation x="6" y="15" z="20" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="6">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="6" y="5" z="8" />
+                <Velocity x="16" y="11" z="7" />
+                <Volume x="16" y="56" z="60" />
+                <Orientation x="6" y="18" z="24" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="7">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="7" y="5" z="9" />
+                <Velocity x="16" y="12" z="7" />
+                <Volume x="17" y="56" z="60" />
+                <Orientation x="6" y="21" z="28" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="8">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="8" y="5" z="10" />
+                <Velocity x="16" y="13" z="7" />
+                <Volume x="18" y="56" z="60" />
+                <Orientation x="6" y="24" z="32" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="9">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="9" y="5" z="11" />
+                <Velocity x="16" y="14" z="7" />
+                <Volume x="19" y="56" z="60" />
+                <Orientation x="6" y="27" z="36" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+          </Cells>
+          <SimulationEnvironment Viscosity="1">
+            <volume x="40" y="56" z="60" />
+            <Boundary Shape="Cuboid" Radius="40" Height="80" Width="80" Depth="80" />
+          </SimulationEnvironment>
+        </CurrentState>
+        <TimeSeries>
+          <series>
+            <parameters Name="Function0" TimeInterval="0" />
+            <data>
+              <dp>0.43</dp>
+              <dp>0.46099999999999997</dp>
+              <dp>0.492</dp>
+              <dp>0.523</dp>
+              <dp>0.554</dp>
+              <dp>0.585</dp>
+              <dp>0.616</dp>
+              <dp>0.647</dp>
+              <dp>0.67799999999999994</dp>
+              <dp>0.70900000000000007</dp>
+              <dp>0.74</dp>
+              <dp>0.77099999999999991</dp>
+              <dp>0.802</dp>
+              <dp>0.833</dp>
+              <dp>0.864</dp>
+              <dp>0.895</dp>
+              <dp>0.92599999999999993</dp>
+              <dp>0.95700000000000007</dp>
+              <dp>0.988</dp>
+              <dp>1.019</dp>
+            </data>
+          </series>
+          <series>
+            <parameters Name="Function1" TimeInterval="1.2" />
+            <data>
+              <dp>0.43</dp>
+              <dp>1.4609999999999999</dp>
+              <dp>2.492</dp>
+              <dp>3.523</dp>
+              <dp>4.5539999999999994</dp>
+              <dp>5.585</dp>
+              <dp>6.616</dp>
+              <dp>7.6469999999999994</dp>
+              <dp>8.677999999999999</dp>
+              <dp>9.709</dp>
+              <dp>10.74</dp>
+              <dp>11.770999999999999</dp>
+              <dp>12.802</dp>
+              <dp>13.833</dp>
+              <dp>14.863999999999999</dp>
+              <dp>15.895</dp>
+              <dp>16.926</dp>
+              <dp>17.957</dp>
+              <dp>18.988</dp>
+              <dp>20.019</dp>
+            </data>
+          </series>
+          <series>
+            <parameters Name="Function2" TimeInterval="2.4" />
+            <data>
+              <dp>0.43</dp>
+              <dp>2.4610000000000003</dp>
+              <dp>4.492</dp>
+              <dp>6.523</dp>
+              <dp>8.554</dp>
+              <dp>10.584999999999999</dp>
+              <dp>12.616</dp>
+              <dp>14.647</dp>
+              <dp>16.678</dp>
+              <dp>18.709</dp>
+              <dp>20.74</dp>
+              <dp>22.771</dp>
+              <dp>24.802</dp>
+              <dp>26.833</dp>
+              <dp>28.864</dp>
+              <dp>30.895</dp>
+              <dp>32.926</dp>
+              <dp>34.957</dp>
+              <dp>36.988</dp>
+              <dp>39.019</dp>
+            </data>
+          </series>
+        </TimeSeries>
+      </SimulationResults>
+      <Parameters StepTime="0.01" SimulationLength="5" SnapshotInterval="0" RelativeTolerance="1E-08" SolverMethod="RungeKutta" CvodeType="0">
+        <InitialState>
+          <Cells>
+            <CellInstance GroupID="0">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="0" y="1" z="2" />
+                <Velocity x="0" y="5" z="3" />
+                <Volume x="10" y="0" z="0" />
+                <Orientation x="2" y="0" z="0" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="1">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="1" y="1" z="3" />
+                <Velocity x="0" y="6" z="3" />
+                <Volume x="11" y="0" z="0" />
+                <Orientation x="2" y="3" z="4" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="2">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="2" y="1" z="4" />
+                <Velocity x="0" y="7" z="3" />
+                <Volume x="12" y="0" z="0" />
+                <Orientation x="2" y="6" z="8" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="3">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="3" y="1" z="5" />
+                <Velocity x="0" y="8" z="3" />
+                <Volume x="13" y="0" z="0" />
+                <Orientation x="2" y="9" z="12" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="4">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="4" y="1" z="6" />
+                <Velocity x="0" y="9" z="3" />
+                <Volume x="14" y="0" z="0" />
+                <Orientation x="2" y="12" z="16" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="5">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="5" y="1" z="7" />
+                <Velocity x="0" y="10" z="3" />
+                <Volume x="15" y="0" z="0" />
+                <Orientation x="2" y="15" z="20" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="6">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="6" y="1" z="8" />
+                <Velocity x="0" y="11" z="3" />
+                <Volume x="16" y="0" z="0" />
+                <Orientation x="2" y="18" z="24" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="7">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="7" y="1" z="9" />
+                <Velocity x="0" y="12" z="3" />
+                <Volume x="17" y="0" z="0" />
+                <Orientation x="2" y="21" z="28" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="8">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="8" y="1" z="10" />
+                <Velocity x="0" y="13" z="3" />
+                <Volume x="18" y="0" z="0" />
+                <Orientation x="2" y="24" z="32" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+            <CellInstance GroupID="9">
+              <flaggy TumbleDuration="3" MotiveStength="0.8" TumbleUpdateFrequency="0.25" />
+              <CellInstanceDefinition name="cellDef1" />
+              <CellInstanceSpatialContext>
+                <Position x="9" y="1" z="11" />
+                <Velocity x="0" y="14" z="3" />
+                <Volume x="19" y="0" z="0" />
+                <Orientation x="2" y="27" z="36" />
+              </CellInstanceSpatialContext>
+            </CellInstance>
+          </Cells>
+          <SimulationEnvironment Viscosity="1">
+            <volume x="0" y="0" z="0" />
+            <Boundary Shape="Cuboid" Radius="40" Height="80" Width="80" Depth="80" />
+          </SimulationEnvironment>
+        </InitialState>
+        <TimeSeries>
+          <TimeSeries>
+            <parameters Name="Function0" TimeInterval="0" />
+            <data>
+              <dp>0.43</dp>
+              <dp>0.46099999999999997</dp>
+              <dp>0.492</dp>
+              <dp>0.523</dp>
+              <dp>0.554</dp>
+              <dp>0.585</dp>
+              <dp>0.616</dp>
+              <dp>0.647</dp>
+              <dp>0.67799999999999994</dp>
+              <dp>0.70900000000000007</dp>
+              <dp>0.74</dp>
+              <dp>0.77099999999999991</dp>
+              <dp>0.802</dp>
+              <dp>0.833</dp>
+              <dp>0.864</dp>
+              <dp>0.895</dp>
+              <dp>0.92599999999999993</dp>
+              <dp>0.95700000000000007</dp>
+              <dp>0.988</dp>
+              <dp>1.019</dp>
+            </data>
+          </TimeSeries>
+          <TimeSeries>
+            <parameters Name="Function1" TimeInterval="1.2" />
+            <data>
+              <dp>0.43</dp>
+              <dp>1.4609999999999999</dp>
+              <dp>2.492</dp>
+              <dp>3.523</dp>
+              <dp>4.5539999999999994</dp>
+              <dp>5.585</dp>
+              <dp>6.616</dp>
+              <dp>7.6469999999999994</dp>
+              <dp>8.677999999999999</dp>
+              <dp>9.709</dp>
+              <dp>10.74</dp>
+              <dp>11.770999999999999</dp>
+              <dp>12.802</dp>
+              <dp>13.833</dp>
+              <dp>14.863999999999999</dp>
+              <dp>15.895</dp>
+              <dp>16.926</dp>
+              <dp>17.957</dp>
+              <dp>18.988</dp>
+              <dp>20.019</dp>
+            </data>
+          </TimeSeries>
+          <TimeSeries>
+            <parameters Name="Function2" TimeInterval="2.4" />
+            <data>
+              <dp>0.43</dp>
+              <dp>2.4610000000000003</dp>
+              <dp>4.492</dp>
+              <dp>6.523</dp>
+              <dp>8.554</dp>
+              <dp>10.584999999999999</dp>
+              <dp>12.616</dp>
+              <dp>14.647</dp>
+              <dp>16.678</dp>
+              <dp>18.709</dp>
+              <dp>20.74</dp>
+              <dp>22.771</dp>
+              <dp>24.802</dp>
+              <dp>26.833</dp>
+              <dp>28.864</dp>
+              <dp>30.895</dp>
+              <dp>32.926</dp>
+              <dp>34.957</dp>
+              <dp>36.988</dp>
+              <dp>39.019</dp>
+            </data>
+          </TimeSeries>
+        </TimeSeries>
+      </Parameters>
+    </Simulation>
+  </simulations>
+  <CellDefinitions />
+</Experiment>

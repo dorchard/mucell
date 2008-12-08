@@ -1,0 +1,397 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1EC3FB18-3380-42C2-AAC6-2CD4E5CB5EB5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MuCell</RootNamespace>
+    <AssemblyName>MuCell</AssemblyName>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <ManifestCertificateThumbprint>36B621D176708B210514965A3E7EAD561E822C12</ManifestCertificateThumbprint>
+    <ManifestKeyFile>MuCell_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <PublishUrl>K:\4yp\muCell\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>MuCell</AssemblyName>
+    <RootNamespace>MuCell</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>MuCell</AssemblyName>
+    <DebugSymbols>true</DebugSymbols>
+    <RootNamespace>MuCell</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.core, Version=2.4.6.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\nunit.core.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.6.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=0.9.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\Analyzer3DViewPanelController.cs" />
+    <Compile Include="Controller\GraphLayoutManager.cs" />
+    <Compile Include="Controller\GraphLayoutManager_SpringEmbedder.cs" />
+    <Compile Include="Controller\GraphLayoutThreadManager.cs" />
+    <Compile Include="Controller\IAnalyzer3DViewPanelUI.cs" />
+    <Compile Include="Controller\IGraphRearrangementListener.cs" />
+    <Compile Include="Controller\ISimulationListener.cs" />
+    <Compile Include="Controller\ITimeSeriesEditorPanelUI.cs" />
+    <Compile Include="Controller\Simulator.cs" />
+    <Compile Include="Controller\ISpatialConfigurationPanelUI.cs" />
+    <Compile Include="Controller\SpatialConfigurationPanelController.cs" />
+    <Compile Include="Controller\TimeSeriesEditorPanelController.cs" />
+    <Compile Include="Model\Boundary.cs" />
+    <Compile Include="Model\CellDefinition.cs" />
+    <Compile Include="Model\CellInstance.cs" />
+    <Compile Include="Model\Environment.cs" />
+    <Compile Include="Model\Experiment.cs" />
+    <Compile Include="Model\NutrientField.cs" />
+    <Compile Include="Model\SBML\ExtracellularComponents\ComponentWorldStateBase.cs" />
+    <Compile Include="Model\SBML\ExtracellularComponents\FlagellaComponent.cs" />
+    <Compile Include="Model\Interfaces\ISimulationController.cs" />
+    <Compile Include="Model\Interfaces\ISimulationView.cs" />
+    <Compile Include="Model\MathHelper.cs" />
+    <Compile Include="Model\Rectangle.cs" />
+    <Compile Include="Model\Results.cs" />
+    <Compile Include="Model\SBML\ExtracellularComponents\ComponentBase.cs" />
+    <Compile Include="Model\SBML\ExtracellularComponents\FlagellaWorldState.cs" />
+    <Compile Include="Model\SBML\ExtracellularComponents\ReceptorComponent.cs" />
+    <Compile Include="Model\SBML\ExtracellularComponents\ReceptorWorldState.cs" />
+    <Compile Include="Model\SBML\MathTree\FormulaParser.cs" />
+    <Compile Include="Model\SBML\Model.cs" />
+    <Compile Include="Model\SBML\Reader.cs" />
+    <Compile Include="Model\SBML\SBMLroot.cs" />
+    <Compile Include="Model\SBML\UnknownEntity.cs" />
+    <Compile Include="Model\SBML\XPosition.cs" />
+    <Compile Include="Model\SBML\YPosition.cs" />
+    <Compile Include="Model\Simulation.cs" />
+    <Compile Include="Model\SimulationParameters.cs" />
+    <Compile Include="Model\SpatialContext.cs" />
+    <Compile Include="Model\StateSnapshot.cs" />
+    <Compile Include="Model\TimeSeries.cs" />
+    <Compile Include="Model\TimeSeriesFunction.cs" />
+    <Compile Include="Model\Vector2.cs" />
+    <Compile Include="Model\Vector3.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestRigs\OpenGLForm2.resx">
+      <DependentUpon>OpenGLForm2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Analyser3DViewPanelUI.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Analyser3DViewPanelUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ApplicationUI.resx">
+      <DependentUpon>ApplicationUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CellDefinitionsPanelUI.resx">
+      <DependentUpon>CellDefinitionsPanelUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ExperimentTreePanelUI.resx">
+      <DependentUpon>ExperimentTreePanelUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\InputDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OpenGL\OpenGLPanel.resx">
+      <DependentUpon>OpenGLPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SimulationAnalyserPanelUI.resx">
+      <DependentUpon>SimulationAnalyserPanelUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SimulationEditorPanelUI.resx">
+      <DependentUpon>SimulationEditorPanelUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SpatialConfigurationPanelUI.resx">
+      <DependentUpon>SpatialConfigurationPanelUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TimeSeriesEditorPanelUI.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TimeSeriesEditorPanelUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TimeSeriesGraphPanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TimeSeriesGraphPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TimeSeriesRawDataViewer.resx">
+      <DependentUpon>TimeSeriesRawDataViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="MuCell_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TestRigs\ErrorLog.cs" />
+    <Compile Include="TestRigs\GlobalData.cs" />
+    <Compile Include="TestRigs\OpenGLForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestRigs\OpenGLForm2.Designer.cs">
+      <DependentUpon>OpenGLForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestRigs\TestOpenGLFrame.cs" />
+    <Compile Include="UnitTests\Controller\TestSimulator.cs" />
+    <Compile Include="UnitTests\Model\TestEnvironment.cs" />
+    <Compile Include="UnitTests\Model\TestExperiment.cs" />
+    <Compile Include="UnitTests\Model\TestFormulas.cs" />
+    <Compile Include="UnitTests\Model\TestSBML.cs" />
+    <Compile Include="UnitTests\Model\TestSpatialContext.cs" />
+    <Compile Include="UnitTests\Model\TestVector.cs" />
+    <Compile Include="UnitTests\View\TestTimeSeriesGraphPanel.cs" />
+    <Compile Include="View\Analyser3DViewPanelUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Analyser3DViewPanelUI.Designer.cs">
+      <DependentUpon>Analyser3DViewPanelUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ApplicationUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ComponentBaseCommand.cs" />
+    <Compile Include="View\ComponentLinkCommand.cs" />
+    <Compile Include="View\CursorComponent.cs" />
+    <Compile Include="View\ICommand.cs" />
+    <Compile Include="View\IDrawingInterface.cs" />
+    <Compile Include="View\InputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\InputDialog.Designer.cs">
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MacroCommand.cs" />
+    <Compile Include="View\ModifierLinkCommand.cs" />
+    <Compile Include="View\MoveComponentCommand.cs" />
+    <Compile Include="View\OpenGL\GLDrawHelper.cs" />
+    <Compile Include="View\OpenGL\GLTextures.cs" />
+    <Compile Include="View\OpenGL\OpenGLCellPlacementPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\OpenGL\OpenGLPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Interfaces\ICellDefinitionController.cs" />
+    <Compile Include="Model\Interfaces\ICellDefinitionView.cs" />
+    <Compile Include="Model\Interfaces\IExperimentController.cs" />
+    <Compile Include="Model\Interfaces\IExperimentView.cs" />
+    <Compile Include="Model\Interfaces\ISpatialContextController.cs" />
+    <Compile Include="Model\Interfaces\ISpatialContextView.cs" />
+    <Compile Include="Model\Interfaces\ICellInstanceView.cs" />
+    <Compile Include="Model\Interfaces\ICellInstanceController.cs" />
+    <Compile Include="Model\Variable.cs" />
+    <Compile Include="View\CellDefinitionsPanelUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\OpenGL\OpenGLPanelViewState.cs" />
+    <Compile Include="View\OpenGL\SpatialViewState.cs" />
+    <Compile Include="View\ParameterCommand.cs" />
+    <Compile Include="View\PropertyChangeCommand.cs" />
+    <Compile Include="View\ReactionCommand.cs" />
+    <Compile Include="View\ReactionLinkCommand.cs" />
+    <Compile Include="View\RenameEntityCommand.cs" />
+    <Compile Include="View\SimulationAnalyserPanelUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\SimulationEditorPanelUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ExperimentTreePanelUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controller\ApplicationController.cs" />
+    <Compile Include="Controller\CellDefinitionsPanelController.cs" />
+    <Compile Include="Controller\IApplicationUI.cs" />
+    <Compile Include="Controller\IControllable.cs" />
+    <Compile Include="Controller\ISimulationAnalyserPanelUI.cs" />
+    <Compile Include="Controller\ISimulationEditorPanelUI.cs" />
+    <Compile Include="Controller\IExperimentTreePanelUI.cs" />
+    <Compile Include="Controller\SimulationAnalyserPanelController.cs" />
+    <Compile Include="Controller\SimulationEditorPanelController.cs" />
+    <Compile Include="Controller\ExperimentTreePanelController.cs" />
+    <Compile Include="View\SpatialConfigurationPanelUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Model\SBML\AlgebraicRule.cs" />
+    <Compile Include="Model\SBML\AssignmentRule.cs" />
+    <Compile Include="Model\SBML\Compartment.cs" />
+    <Compile Include="Model\SBML\CompartmentType.cs" />
+    <Compile Include="Model\SBML\Constraint.cs" />
+    <Compile Include="Model\SBML\Delay.cs" />
+    <Compile Include="Model\SBML\Event.cs" />
+    <Compile Include="Model\SBML\EventAssignment.cs" />
+    <Compile Include="Model\SBML\FunctionDefinition.cs" />
+    <Compile Include="Model\SBML\InitialAssignment.cs" />
+    <Compile Include="Model\SBML\KineticLaw.cs" />
+    <Compile Include="Model\SBML\ModifierSpeciesReference.cs" />
+    <Compile Include="Model\SBML\Parameter.cs" />
+    <Compile Include="Model\SBML\RateRule.cs" />
+    <Compile Include="Model\SBML\Reaction.cs" />
+    <Compile Include="Model\SBML\Rule.cs" />
+    <Compile Include="Model\SBML\SBase.cs" />
+    <Compile Include="Model\SBML\SimpleSpeciesReference.cs" />
+    <Compile Include="Model\SBML\Species.cs" />
+    <Compile Include="Model\SBML\SpeciesReference.cs" />
+    <Compile Include="Model\SBML\SpeciesType.cs" />
+    <Compile Include="Model\SBML\Trigger.cs" />
+    <Compile Include="Model\SBML\Unit.cs" />
+    <Compile Include="Model\SBML\UnitDefinition.cs" />
+    <Compile Include="Controller\ICellDefinitionsPanelUI.cs" />
+    <Compile Include="Model\SBML\MathTree\LeafNode.cs" />
+    <Compile Include="Model\SBML\MathTree\MathNode.cs" />
+    <Compile Include="Model\SBML\MathTree\MathTree.cs" />
+    <Compile Include="Model\SBML\MathTree\InnerNode.cs" />
+    <Compile Include="Model\SBML\Operators.cs" />
+    <Compile Include="Model\Interfaces\IResultsView.cs" />
+    <Compile Include="Model\Interfaces\IResultsController.cs" />
+    <Compile Include="Model\Interfaces\ISimulationParametersView.cs" />
+    <Compile Include="Model\Interfaces\ISimulationParametersController.cs" />
+    <Compile Include="Model\Interfaces\IStateSnapshotView.cs" />
+    <Compile Include="Model\Interfaces\IStateSnapshotController.cs" />
+    <Compile Include="Model\Interfaces\ITimeSeriesView.cs" />
+    <Compile Include="Model\Interfaces\ITimeSeriesController.cs" />
+    <Compile Include="Model\Interfaces\ITimeSeriesFunctionView.cs" />
+    <Compile Include="Model\Interfaces\ITimeSeriesFunctionController.cs" />
+    <Compile Include="Model\Interfaces\ICellDefinitionSimulator.cs" />
+    <Compile Include="Model\Interfaces\ICellInstanceSimulator.cs" />
+    <Compile Include="Model\Interfaces\IExperimentSimulator.cs" />
+    <Compile Include="Model\Interfaces\IResultsSimulator.cs" />
+    <Compile Include="Model\Interfaces\ISimulationParametersSimulator.cs" />
+    <Compile Include="Model\Interfaces\ISimulationSimulator.cs" />
+    <Compile Include="Model\Interfaces\ISpatialContextSimulator.cs" />
+    <Compile Include="Model\Interfaces\IStateSnapshotSimulator.cs" />
+    <Compile Include="Model\Interfaces\ITimeSeriesFunctionSimulator.cs" />
+    <Compile Include="Model\Interfaces\ITimeSeriesSimulator.cs" />
+    <Compile Include="View\SpeciesCommand.cs" />
+    <Compile Include="View\TimeSeriesEditorPanelUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\TimeSeriesEditorPanelUI.Designer.cs">
+      <DependentUpon>TimeSeriesEditorPanelUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TimeSeriesGraphPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\TimeSeriesGraphPanel.Designer.cs">
+      <DependentUpon>TimeSeriesGraphPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Interfaces\IModelComponent.cs" />
+    <Compile Include="Model\SBML\MathTree\NumberLeafNode.cs" />
+    <Compile Include="Model\SBML\MathTree\ReferenceLeafNode.cs" />
+    <Compile Include="UnitTests\Model\TestEvaluationFunctions.cs" />
+    <Compile Include="Model\SBML\MathBase.cs" />
+    <Compile Include="UnitTests\Model\TestReactions.cs" />
+    <Compile Include="Model\SBML\MathTree\AggregateReferenceNode.cs" />
+    <Compile Include="Model\SBML\Group.cs" />
+    <Compile Include="UnitTests\Model\TestAggregateFunctions.cs" />
+    <None Include="UnitTests\smallest.Hopf.level2.xml" />
+    <Compile Include="UnitTests\AssertDouble.cs" />
+    <Compile Include="Model\Solver\CVode.cs" />
+    <Compile Include="Model\Solver\Euler.cs" />
+    <Compile Include="Model\Solver\SolverBase.cs" />
+    <Compile Include="Model\Solver\RungeKutta.cs" />
+    <Compile Include="Model\SBML\SpatialParameters.cs" />
+    <Compile Include="View\TimeSeriesRawDataViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TimeSeriesRawDataViewer.Designer.cs">
+      <DependentUpon>TimeSeriesRawDataViewer.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UnitTests\ecc00020.xml" />
+    <Content Include="UnitTests\smallest.Hopf.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

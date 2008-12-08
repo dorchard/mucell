@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sbml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" level="2" version="3" xmlns="http://www.sbml.org/sbml/level2">
+  <model id="Smallest_chemical_reaction_system_with_Hopf_bifurcation">
+    <listOfSpecies />
+    <listOfParameters />
+    <listOfReactions />
+    <listOfComponents />
+  </model>
+</sbml>

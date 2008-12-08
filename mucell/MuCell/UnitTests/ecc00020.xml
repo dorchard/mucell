@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" version="1" level="2"
+      xmlns:celldesigner="http://www.sbml.org/2001/ns/celldesigner">
+	<model id="ecc00020" name="ecc00020">
+		<annotation>
+			<celldesigner:modelVersion>2.2</celldesigner:modelVersion>
+			<celldesigner:modelDisplay sizeX="936" sizeY="715"/>
+			<celldesigner:listOfCompartmentAliases>
+				<celldesigner:compartmentAlias id="ca1" compartment="uVol">
+					<celldesigner:class>SQUARE</celldesigner:class>
+					<celldesigner:bounds x="10.0" y="10.0" w="916" h="695" />
+				</celldesigner:compartmentAlias>
+			</celldesigner:listOfCompartmentAliases>
+			<celldesigner:listOfSpeciesAliases>
+				<celldesigner:speciesAlias id="e0" species="isocitrate_space_dehydrogenase_space__space_NADP_plus__space_" compartmentAlias="ca1">
+					<celldesigner:bounds x="725" y="337" w="224" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e1" species="malate_space_dehydrogenase" compartmentAlias="ca1">
+					<celldesigner:bounds x="255" y="280" w="160" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e2" species="dihydrolipoyllysine_minus_residue_space_succinyltransferase" compartmentAlias="ca1">
+					<celldesigner:bounds x="405" y="509" w="329" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e3" species="aconitate_space_hydratase" compartmentAlias="ca1">
+					<celldesigner:bounds x="624" y="313" w="152" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e4" species="citryl_minus_CoA_space_lyase" compartmentAlias="ca1">
+					<celldesigner:bounds x="360" y="357" w="128" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e5" species="citrate_space__space_pro_minus_3S_space__minus_lyase" compartmentAlias="ca1">
+					<celldesigner:bounds x="526" y="402" w="176" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e6" species="dihydrolipoyl_space_dehydrogenanse" compartmentAlias="ca1">
+					<celldesigner:bounds x="470" y="548" w="224" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e7" species="succinate_space_dehydrogenase" compartmentAlias="ca1">
+					<celldesigner:bounds x="164" y="478" w="184" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e8" species="isocitrate_space_dehydrogenase_space__space_NADP_plus__space_" compartmentAlias="ca1">
+					<celldesigner:bounds x="724" y="442" w="224" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e9" species="succinate_minus_CoA_space_ligase_space__space_ADP_minus_forming_space_" compartmentAlias="ca1">
+					<celldesigner:bounds x="262" y="520" w="238" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e10" species="citrate_space__space_Si_space__minus_synthase" compartmentAlias="ca1">
+					<celldesigner:bounds x="436" y="269" w="168" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e11" species="fumarate_space_hydratase" compartmentAlias="ca1">
+					<celldesigner:bounds x="193" y="371" w="144" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e12" species="oxoglutarate_space_dehydrogenase_space__space_succinyl_minus_transferring_space_" compartmentAlias="ca1">
+					<celldesigner:bounds x="663" y="509" w="350" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e13" species="citrate_space_CoA_minus_transferase" compartmentAlias="ca1">
+					<celldesigner:bounds x="439" y="385" w="184" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e14" species="aconitate_space_hydratase" compartmentAlias="ca1">
+					<celldesigner:bounds x="573" y="280" w="152" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e15" species="phosphoenolpyruvate_space_carboxykinase_space__space_ATP_space_" compartmentAlias="ca1">
+					<celldesigner:bounds x="367" y="111" w="273" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e16" species="oxoglutarate_space_dehydrogenase_space__space_succinyl_minus_transferring_space_" compartmentAlias="ca1">
+					<celldesigner:bounds x="528" y="509" w="350" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="e17" species="aconitate_space_hydratase" compartmentAlias="ca1">
+					<celldesigner:bounds x="672" y="280" w="152" h="15.0"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c0" species="Isocitrate" compartmentAlias="ca1">
+					<celldesigner:bounds x="743" y="288" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c1" species="Acetyl_minus_CoA" compartmentAlias="ca1">
+					<celldesigner:bounds x="395" y="420" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c2" species="CoA" compartmentAlias="ca1">
+					<celldesigner:bounds x="503" y="312" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c3" species="Succinate" compartmentAlias="ca1">
+					<celldesigner:bounds x="212" y="518" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c4" species="Citrate" compartmentAlias="ca1">
+					<celldesigner:bounds x="547" y="288" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c5" species="Oxaloacetate" compartmentAlias="ca1">
+					<celldesigner:bounds x="345" y="288" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c6" species="_space_3_minus_Carboxy_minus_1_minus_hydroxypropyl_minus_ThPP" compartmentAlias="ca1">
+					<celldesigner:bounds x="617" y="517" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c7" species="Acetyl_minus_CoA" compartmentAlias="ca1">
+					<celldesigner:bounds x="420" y="229" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c8" species="_space_2_minus_Oxoglutarate" compartmentAlias="ca1">
+					<celldesigner:bounds x="747" y="517" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c9" species="_space_3S_space__minus_Citryl_minus_CoA" compartmentAlias="ca1">
+					<celldesigner:bounds x="428" y="365" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c10" species="cis_minus_Aconitate" compartmentAlias="ca1">
+					<celldesigner:bounds x="646" y="288" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c11" species="S_minus_Succinyldihydrolipoamide" compartmentAlias="ca1">
+					<celldesigner:bounds x="487" y="518" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c12" species="Oxalosuccinate" compartmentAlias="ca1">
+					<celldesigner:bounds x="747" y="401" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c13" species="Lipoamide" compartmentAlias="ca1">
+					<celldesigner:bounds x="548" y="557" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c14" species="Fumarate" compartmentAlias="ca1">
+					<celldesigner:bounds x="215" y="425" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c15" species="_space_S_space__minus_Malate" compartmentAlias="ca1">
+					<celldesigner:bounds x="215" y="337" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c16" species="Acetate" compartmentAlias="ca1">
+					<celldesigner:bounds x="589" y="433" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c17" species="CO2" compartmentAlias="ca1">
+					<celldesigner:bounds x="786" y="417" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c18" species="Succinyl_minus_CoA" compartmentAlias="ca1">
+					<celldesigner:bounds x="359" y="518" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c19" species="Thiamin_space_diphosphate" compartmentAlias="ca1">
+					<celldesigner:bounds x="616" y="478" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c20" species="CO2" compartmentAlias="ca1">
+					<celldesigner:bounds x="645" y="490" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c21" species="Dihydrolipoamide" compartmentAlias="ca1">
+					<celldesigner:bounds x="433" y="557" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+				<celldesigner:speciesAlias id="c22" species="Phosphoenolpyruvate" compartmentAlias="ca1">
+					<celldesigner:bounds x="440" y="130" w="54" h="18"/>
+				</celldesigner:speciesAlias>
+			</celldesigner:listOfSpeciesAliases>
+			<celldesigner:listOfProteins>
+				<celldesigner:protein id="p0" type="GENERIC" name="isocitrate_space_dehydrogenase_space__space_NADP_plus__space_">
+				</celldesigner:protein>
+				<celldesigner:protein id="p1" type="GENERIC" name="malate_space_dehydrogenase">
+				</celldesigner:protein>
+				<celldesigner:protein id="p2" type="GENERIC" name="dihydrolipoyllysine_minus_residue_space_succinyltransferase">
+				</celldesigner:protein>
+				<celldesigner:protein id="p3" type="GENERIC" name="aconitate_space_hydratase">
+				</celldesigner:protein>
+				<celldesigner:protein id="p4" type="GENERIC" name="citryl_minus_CoA_space_lyase">
+				</celldesigner:protein>
+				<celldesigner:protein id="p5" type="GENERIC" name="citrate_space__space_pro_minus_3S_space__minus_lyase">
+				</celldesigner:protein>
+				<celldesigner:protein id="p6" type="GENERIC" name="dihydrolipoyl_space_dehydrogenanse">
+				</celldesigner:protein>
+				<celldesigner:protein id="p7" type="GENERIC" name="succinate_space_dehydrogenase">
+				</celldesigner:protein>
+				<celldesigner:protein id="p8" type="GENERIC" name="succinate_minus_CoA_space_ligase_space__space_ADP_minus_forming_space_">
+				</celldesigner:protein>
+				<celldesigner:protein id="p9" type="GENERIC" name="citrate_space__space_Si_space__minus_synthase">
+				</celldesigner:protein>
+				<celldesigner:protein id="p10" type="GENERIC" name="fumarate_space_hydratase">
+				</celldesigner:protein>
+				<celldesigner:protein id="p11" type="GENERIC" name="oxoglutarate_space_dehydrogenase_space__space_succinyl_minus_transferring_space_">
+				</celldesigner:protein>
+				<celldesigner:protein id="p12" type="GENERIC" name="citrate_space_CoA_minus_transferase">
+				</celldesigner:protein>
+				<celldesigner:protein id="p13" type="GENERIC" name="phosphoenolpyruvate_space_carboxykinase_space__space_ATP_space_">
+				</celldesigner:protein>
+			</celldesigner:listOfProteins>
+		</annotation>
+		<listOfCompartments>
+			<compartment id="default" name="default" />
+			<compartment id="uVol" name="uVol" outside="default" />
+		</listOfCompartments>
+		<listOfSpecies>
+			<species id="isocitrate_space_dehydrogenase_space__space_NADP_plus__space_" name="isocitrate dehydrogenase (NADP+)" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p0</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R00268"/>
+						<celldesigner:catalyzed reaction="R01899"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="malate_space_dehydrogenase" name="malate dehydrogenase" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p1</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R00342"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="dihydrolipoyllysine_minus_residue_space_succinyltransferase" name="dihydrolipoyllysine-residue succinyltransferase" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p2</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R02570"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="aconitate_space_hydratase" name="aconitate hydratase" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p3</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R01324"/>
+						<celldesigner:catalyzed reaction="R01325"/>
+						<celldesigner:catalyzed reaction="R01900"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="citryl_minus_CoA_space_lyase" name="citryl-CoA lyase" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p4</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R00354"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="citrate_space__space_pro_minus_3S_space__minus_lyase" name="citrate (pro-3S)-lyase" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p5</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R00362"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="dihydrolipoyl_space_dehydrogenanse" name="dihydrolipoyl dehydrogenanse" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p6</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R01698"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="succinate_space_dehydrogenase" name="succinate dehydrogenase" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p7</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R00412"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="succinate_minus_CoA_space_ligase_space__space_ADP_minus_forming_space_" name="succinate-CoA ligase (ADP-forming)" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p8</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R00405"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="citrate_space__space_Si_space__minus_synthase" name="citrate (Si)-synthase" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p9</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R00351"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="fumarate_space_hydratase" name="fumarate hydratase" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p10</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R01082"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="oxoglutarate_space_dehydrogenase_space__space_succinyl_minus_transferring_space_" name="oxoglutarate dehydrogenase (succinyl-transferring)" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p11</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R03316"/>
+						<celldesigner:catalyzed reaction="R00621"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="citrate_space_CoA_minus_transferase" name="citrate CoA-transferase" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p12</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R01323"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="phosphoenolpyruvate_space_carboxykinase_space__space_ATP_space_" name="phosphoenolpyruvate carboxykinase (ATP)" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>PROTEIN</celldesigner:class>
+						<celldesigner:proteinReference>p13</celldesigner:proteinReference>
+					</celldesigner:speciesIdentity>
+					<celldesigner:listOfCatalyzedReactions>
+						<celldesigner:catalyzed reaction="R00341"/>
+					</celldesigner:listOfCatalyzedReactions>
+				</annotation>
+			</species>
+			<species id="Isocitrate" name="Isocitrate" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Isocitrate</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="Acetyl_minus_CoA" name="Acetyl-CoA" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Acetyl_minus_CoA</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="CoA" name="CoA" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>CoA</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="Succinate" name="Succinate" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Succinate</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="Citrate" name="Citrate" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Citrate</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="Oxaloacetate" name="Oxaloacetate" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Oxaloacetate</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="_space_3_minus_Carboxy_minus_1_minus_hydroxypropyl_minus_ThPP" name="3-Carboxy-1-hydroxypropyl-ThPP" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>_space_3_minus_Carboxy_minus_1_minus_hydroxypropyl_minus_ThPP</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="Acetyl_minus_CoA" name="Acetyl-CoA" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Acetyl_minus_CoA</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="_space_2_minus_Oxoglutarate" name="2-Oxoglutarate" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>_space_2_minus_Oxoglutarate</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="_space_3S_space__minus_Citryl_minus_CoA" name="(3S)-Citryl-CoA" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>_space_3S_space__minus_Citryl_minus_CoA</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="cis_minus_Aconitate" name="cis-Aconitate" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>cis_minus_Aconitate</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="S_minus_Succinyldihydrolipoamide" name="S-Succinyldihydrolipoamide" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>S_minus_Succinyldihydrolipoamide</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="Oxalosuccinate" name="Oxalosuccinate" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Oxalosuccinate</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="Lipoamide" name="Lipoamide" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Lipoamide</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="Fumarate" name="Fumarate" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Fumarate</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="_space_S_space__minus_Malate" name="(S)-Malate" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>_space_S_space__minus_Malate</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="Acetate" name="Acetate" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Acetate</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="CO2" name="CO2" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>CO2</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="Succinyl_minus_CoA" name="Succinyl-CoA" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Succinyl_minus_CoA</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="Thiamin_space_diphosphate" name="Thiamin diphosphate" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Thiamin_space_diphosphate</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="CO2" name="CO2" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>CO2</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="Dihydrolipoamide" name="Dihydrolipoamide" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Dihydrolipoamide</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+			<species id="Phosphoenolpyruvate" name="Phosphoenolpyruvate" compartment="uVol" initialAmount="0.0">
+				<annotation>
+					<celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
+					<celldesigner:speciesIdentity>
+						<celldesigner:class>SIMPLE_MOLECULE</celldesigner:class>
+						<celldesigner:name>Phosphoenolpyruvate</celldesigner:name>
+					</celldesigner:speciesIdentity>
+				</annotation>
+			</species>
+		</listOfSpecies>
+		<listOfReactions>
+			<reaction id="R00268" name="R00268" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>Oxalosuccinate</celldesigner:baseReactants>
+					<celldesigner:baseProducts>_space_2_minus_Oxoglutarate</celldesigner:baseProducts>
+					<celldesigner:listOfProductLinks>
+						<celldesigner:productLink product="CO2" alias="c17"/>
+					</celldesigner:listOfProductLinks>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="isocitrate_space_dehydrogenase_space__space_NADP_plus__space_" aliases="e8"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="Oxalosuccinate">
+						<annotation>
+							<celldesigner:alias>c12</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="_space_2_minus_Oxoglutarate">
+						<annotation>
+							<celldesigner:alias>c8</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+					<speciesReference species="CO2">
+						<annotation>
+							<celldesigner:alias>c17</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="isocitrate_space_dehydrogenase_space__space_NADP_plus__space_"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R03316" name="R03316" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>_space_3_minus_Carboxy_minus_1_minus_hydroxypropyl_minus_ThPP</celldesigner:baseReactants>
+					<celldesigner:baseProducts>S_minus_Succinyldihydrolipoamide</celldesigner:baseProducts>
+					<celldesigner:listOfReactantLinks>
+						<celldesigner:reactantLink reactant="Lipoamide" alias="c13"/>
+					</celldesigner:listOfReactantLinks>
+					<celldesigner:listOfProductLinks>
+						<celldesigner:productLink product="Thiamin_space_diphosphate" alias="c19"/>
+					</celldesigner:listOfProductLinks>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="oxoglutarate_space_dehydrogenase_space__space_succinyl_minus_transferring_space_" aliases="e16"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="_space_3_minus_Carboxy_minus_1_minus_hydroxypropyl_minus_ThPP">
+						<annotation>
+							<celldesigner:alias>c6</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+					<speciesReference species="Lipoamide">
+						<annotation>
+							<celldesigner:alias>c13</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="S_minus_Succinyldihydrolipoamide">
+						<annotation>
+							<celldesigner:alias>c11</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+					<speciesReference species="Thiamin_space_diphosphate">
+						<annotation>
+							<celldesigner:alias>c19</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="oxoglutarate_space_dehydrogenase_space__space_succinyl_minus_transferring_space_"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R01900" name="R01900" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>cis_minus_Aconitate</celldesigner:baseReactants>
+					<celldesigner:baseProducts>Isocitrate</celldesigner:baseProducts>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="aconitate_space_hydratase" aliases="e17"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="cis_minus_Aconitate">
+						<annotation>
+							<celldesigner:alias>c10</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="Isocitrate">
+						<annotation>
+							<celldesigner:alias>c0</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="aconitate_space_hydratase"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R02570" name="R02570" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>S_minus_Succinyldihydrolipoamide</celldesigner:baseReactants>
+					<celldesigner:baseProducts>Succinyl_minus_CoA</celldesigner:baseProducts>
+					<celldesigner:listOfProductLinks>
+						<celldesigner:productLink product="Dihydrolipoamide" alias="c21"/>
+					</celldesigner:listOfProductLinks>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="dihydrolipoyllysine_minus_residue_space_succinyltransferase" aliases="e2"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="S_minus_Succinyldihydrolipoamide">
+						<annotation>
+							<celldesigner:alias>c11</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="Succinyl_minus_CoA">
+						<annotation>
+							<celldesigner:alias>c18</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+					<speciesReference species="Dihydrolipoamide">
+						<annotation>
+							<celldesigner:alias>c21</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="dihydrolipoyllysine_minus_residue_space_succinyltransferase"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R01698" name="R01698" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>Dihydrolipoamide</celldesigner:baseReactants>
+					<celldesigner:baseProducts>Lipoamide</celldesigner:baseProducts>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="dihydrolipoyl_space_dehydrogenanse" aliases="e6"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="Dihydrolipoamide">
+						<annotation>
+							<celldesigner:alias>c21</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="Lipoamide">
+						<annotation>
+							<celldesigner:alias>c13</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="dihydrolipoyl_space_dehydrogenanse"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R00412" name="R00412" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>Succinate</celldesigner:baseReactants>
+					<celldesigner:baseProducts>Fumarate</celldesigner:baseProducts>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="succinate_space_dehydrogenase" aliases="e7"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="Succinate">
+						<annotation>
+							<celldesigner:alias>c3</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="Fumarate">
+						<annotation>
+							<celldesigner:alias>c14</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="succinate_space_dehydrogenase"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R00405" name="R00405" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>Succinate</celldesigner:baseReactants>
+					<celldesigner:baseProducts>Succinyl_minus_CoA</celldesigner:baseProducts>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="succinate_minus_CoA_space_ligase_space__space_ADP_minus_forming_space_" aliases="e9"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="Succinate">
+						<annotation>
+							<celldesigner:alias>c3</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="Succinyl_minus_CoA">
+						<annotation>
+							<celldesigner:alias>c18</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="succinate_minus_CoA_space_ligase_space__space_ADP_minus_forming_space_"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R00341" name="R00341" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>Oxaloacetate</celldesigner:baseReactants>
+					<celldesigner:baseProducts>Phosphoenolpyruvate</celldesigner:baseProducts>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="phosphoenolpyruvate_space_carboxykinase_space__space_ATP_space_" aliases="e15"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="Oxaloacetate">
+						<annotation>
+							<celldesigner:alias>c5</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="Phosphoenolpyruvate">
+						<annotation>
+							<celldesigner:alias>c22</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="phosphoenolpyruvate_space_carboxykinase_space__space_ATP_space_"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R00342" name="R00342" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>_space_S_space__minus_Malate</celldesigner:baseReactants>
+					<celldesigner:baseProducts>Oxaloacetate</celldesigner:baseProducts>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="malate_space_dehydrogenase" aliases="e1"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="_space_S_space__minus_Malate">
+						<annotation>
+							<celldesigner:alias>c15</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="Oxaloacetate">
+						<annotation>
+							<celldesigner:alias>c5</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="malate_space_dehydrogenase"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R00351" name="R00351" reversible="false">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>Acetyl_minus_CoA</celldesigner:baseReactants>
+					<celldesigner:baseProducts>Citrate</celldesigner:baseProducts>
+					<celldesigner:listOfReactantLinks>
+						<celldesigner:reactantLink reactant="Oxaloacetate" alias="c5"/>
+					</celldesigner:listOfReactantLinks>
+					<celldesigner:listOfProductLinks>
+						<celldesigner:productLink product="CoA" alias="c2"/>
+					</celldesigner:listOfProductLinks>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="citrate_space__space_Si_space__minus_synthase" aliases="e10"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="Acetyl_minus_CoA">
+						<annotation>
+							<celldesigner:alias>c7</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+					<speciesReference species="Oxaloacetate">
+						<annotation>
+							<celldesigner:alias>c5</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="Citrate">
+						<annotation>
+							<celldesigner:alias>c4</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+					<speciesReference species="CoA">
+						<annotation>
+							<celldesigner:alias>c2</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="citrate_space__space_Si_space__minus_synthase"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R01323" name="R01323" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>Acetyl_minus_CoA</celldesigner:baseReactants>
+					<celldesigner:baseProducts>_space_3S_space__minus_Citryl_minus_CoA</celldesigner:baseProducts>
+					<celldesigner:listOfReactantLinks>
+						<celldesigner:reactantLink reactant="Citrate" alias="c4"/>
+					</celldesigner:listOfReactantLinks>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="citrate_space_CoA_minus_transferase" aliases="e13"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="Acetyl_minus_CoA">
+						<annotation>
+							<celldesigner:alias>c1</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+					<speciesReference species="Citrate">
+						<annotation>
+							<celldesigner:alias>c4</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="_space_3S_space__minus_Citryl_minus_CoA">
+						<annotation>
+							<celldesigner:alias>c9</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="citrate_space_CoA_minus_transferase"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R01324" name="R01324" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>Citrate</celldesigner:baseReactants>
+					<celldesigner:baseProducts>Isocitrate</celldesigner:baseProducts>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="aconitate_space_hydratase" aliases="e3"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="Citrate">
+						<annotation>
+							<celldesigner:alias>c4</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="Isocitrate">
+						<annotation>
+							<celldesigner:alias>c0</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="aconitate_space_hydratase"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R01082" name="R01082" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>_space_S_space__minus_Malate</celldesigner:baseReactants>
+					<celldesigner:baseProducts>Fumarate</celldesigner:baseProducts>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="fumarate_space_hydratase" aliases="e11"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="_space_S_space__minus_Malate">
+						<annotation>
+							<celldesigner:alias>c15</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="Fumarate">
+						<annotation>
+							<celldesigner:alias>c14</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="fumarate_space_hydratase"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R01325" name="R01325" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>Citrate</celldesigner:baseReactants>
+					<celldesigner:baseProducts>cis_minus_Aconitate</celldesigner:baseProducts>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="aconitate_space_hydratase" aliases="e14"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="Citrate">
+						<annotation>
+							<celldesigner:alias>c4</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="cis_minus_Aconitate">
+						<annotation>
+							<celldesigner:alias>c10</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="aconitate_space_hydratase"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R00362" name="R00362" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>Citrate</celldesigner:baseReactants>
+					<celldesigner:baseProducts>Acetate</celldesigner:baseProducts>
+					<celldesigner:listOfProductLinks>
+						<celldesigner:productLink product="Oxaloacetate" alias="c5"/>
+					</celldesigner:listOfProductLinks>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="citrate_space__space_pro_minus_3S_space__minus_lyase" aliases="e5"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="Citrate">
+						<annotation>
+							<celldesigner:alias>c4</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="Acetate">
+						<annotation>
+							<celldesigner:alias>c16</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+					<speciesReference species="Oxaloacetate">
+						<annotation>
+							<celldesigner:alias>c5</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="citrate_space__space_pro_minus_3S_space__minus_lyase"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R00354" name="R00354" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>_space_3S_space__minus_Citryl_minus_CoA</celldesigner:baseReactants>
+					<celldesigner:baseProducts>Acetyl_minus_CoA</celldesigner:baseProducts>
+					<celldesigner:listOfProductLinks>
+						<celldesigner:productLink product="Oxaloacetate" alias="c5"/>
+					</celldesigner:listOfProductLinks>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="citryl_minus_CoA_space_lyase" aliases="e4"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="_space_3S_space__minus_Citryl_minus_CoA">
+						<annotation>
+							<celldesigner:alias>c9</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="Acetyl_minus_CoA">
+						<annotation>
+							<celldesigner:alias>c1</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+					<speciesReference species="Oxaloacetate">
+						<annotation>
+							<celldesigner:alias>c5</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="citryl_minus_CoA_space_lyase"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R01899" name="R01899" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>Isocitrate</celldesigner:baseReactants>
+					<celldesigner:baseProducts>Oxalosuccinate</celldesigner:baseProducts>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="isocitrate_space_dehydrogenase_space__space_NADP_plus__space_" aliases="e0"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="Isocitrate">
+						<annotation>
+							<celldesigner:alias>c0</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="Oxalosuccinate">
+						<annotation>
+							<celldesigner:alias>c12</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="isocitrate_space_dehydrogenase_space__space_NADP_plus__space_"/>
+				</listOfModifiers>
+			</reaction>
+			<reaction id="R00621" name="R00621" reversible="true">
+				<annotation>
+					<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
+					<celldesigner:baseReactants>_space_2_minus_Oxoglutarate</celldesigner:baseReactants>
+					<celldesigner:baseProducts>_space_3_minus_Carboxy_minus_1_minus_hydroxypropyl_minus_ThPP</celldesigner:baseProducts>
+					<celldesigner:listOfReactantLinks>
+						<celldesigner:reactantLink reactant="Thiamin_space_diphosphate" alias="c19"/>
+					</celldesigner:listOfReactantLinks>
+					<celldesigner:listOfProductLinks>
+						<celldesigner:productLink product="CO2" alias="c20"/>
+					</celldesigner:listOfProductLinks>
+					<celldesigner:listOfModification>
+						<celldesigner:modification type="CATALYSIS" modifiers="oxoglutarate_space_dehydrogenase_space__space_succinyl_minus_transferring_space_" aliases="e12"/>
+					</celldesigner:listOfModification>
+				</annotation>
+				<listOfReactants>
+					<speciesReference species="_space_2_minus_Oxoglutarate">
+						<annotation>
+							<celldesigner:alias>c8</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+					<speciesReference species="Thiamin_space_diphosphate">
+						<annotation>
+							<celldesigner:alias>c19</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="_space_3_minus_Carboxy_minus_1_minus_hydroxypropyl_minus_ThPP">
+						<annotation>
+							<celldesigner:alias>c6</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+					<speciesReference species="CO2">
+						<annotation>
+							<celldesigner:alias>c20</celldesigner:alias>
+						</annotation>
+					</speciesReference>
+				</listOfProducts>
+				<listOfModifiers>
+					<modifierSpeciesReference species="oxoglutarate_space_dehydrogenase_space__space_succinyl_minus_transferring_space_"/>
+				</listOfModifiers>
+			</reaction>
+		</listOfReactions>
+	</model>
+</sbml>

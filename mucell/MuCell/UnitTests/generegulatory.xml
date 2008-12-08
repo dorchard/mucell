@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sbml level="1" version="2" xmlns="http://www.sbml.org/sbml/level1">
+  <model name="gene_regulatory_network">
+    <listOfCompartments>
+      <compartment name="Cyt" volume="1.5" />
+      <compartment name="Nuc" outside="1.5" />
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="mRNA_nuc" compartment="Nuc" initialAmount="0.0032834" />
+      <species id="RNA_nuc" compartment="Nuc" initialAmount="96.117" />
+      <species id="RNAP" compartment="Nuc" initialAmount="0.66349" />
+      <species id="mRNA_cyt" compartment="Cyt" initialAmount="3.8742" />
+      <species id="P" compartment="Cyt" initialAmount="22.035" />
+      <species id="RNA_cyt" compartment="Cyt" initialAmount="0.0054086" />
+      <species id="AA" compartment="Cyt" initialAmount="90.465" />
+      <species id="src" compartment="Nuc" initialAmount="1" boundaryCondition="true" />
+      <species id="waste" compartment="Cyt" initialAmount="1" boundaryCondition="true" />
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction name="R1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="src" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RNAP" />
+        </listOfProducts>
+        <kineticLaw formula="Vi/(1+P/Ki)" />
+      </reaction>      
+      <reaction name="R2" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RNAP" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="waste" />
+        </listOfProducts>
+        <kineticLaw formula="Vkd*RNAP" />
+      </reaction>      
+      <reaction name="R3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RNA_nuc" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="mRNA_nuc" />
+        </listOfProducts>
+        <kineticLaw formula="(Vm1*RNAP*RNA_nuc)/(Km1+RNA_nuc)" />
+      </reaction>      
+      <reaction name="R4" reversible="false">
+        <listOfReactants>
+          <speciesReference species="mRNA_nuc" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="mRNA_cyt" />
+        </listOfProducts>
+        <kineticLaw formula="k1*mRNA_nuc" />
+      </reaction>      
+      <reaction name="R5" reversible="false">
+        <listOfReactants>
+          <speciesReference species="mRNA_cyt" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RNA_cyt" />
+        </listOfProducts>
+        <kineticLaw formula="(Vm2*mRNA_cyt)/(mRNA_cyt+Km2)" />
+      </reaction>      
+      <reaction name="R6" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RNA_cyt" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RNA_nuc" />
+        </listOfProducts>
+        <kineticLaw formula="k2*RNA_cyt" />
+      </reaction>      
+      <reaction name="R7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="AA" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P" />
+        </listOfProducts>
+        <kineticLaw formula="(Vm3*mRNA_cyt*AA)/(AA+Km3)" />
+      </reaction>      
+      <reaction name="R8" reversible="false">
+        <listOfReactants>
+          <speciesReference species="P" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AA" />
+        </listOfProducts>
+        <kineticLaw formula="(Vm4*P)/(P+Km4)" />
+      </reaction>      
+    </listOfReactions>
+    <listOfParameters>
+      <parameter name="Vi" value="10" />
+      <parameter name="Ki" value="0.6" />
+      <parameter name="Vkd" value="1" />
+      <parameter name="Vm1" value="50" />
+      <parameter name="Km1" value="1" />
+      <parameter name="k1" value="10000" />
+      <parameter name="Vm2" value="50" />
+      <parameter name="Km2" value="1" />
+      <parameter name="k2" value="10000" />
+      <parameter name="Vm3" value="50" />
+      <parameter name="Km3" value="80" />
+      <parameter name="Vm4" value="50" />
+      <parameter name="Km4" value="1" />
+    </listOfParameters>
+  </model>
+</sbml>

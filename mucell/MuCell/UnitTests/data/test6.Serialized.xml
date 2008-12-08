@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sbml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" level="2" version="3" xmlns="http://www.sbml.org/sbml/level2">
+  <model id="Smallest_chemical_reaction_system_with_Hopf_bifurcation">
+    <listOfCompartments>
+      <compartment id="compartment" spatialDimensions="3" size="1" constant="true" />
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="X" compartment="compartment" initialAmount="2.5" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" />
+      <species id="A" compartment="compartment" initialAmount="1" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" />
+      <species id="Y" compartment="compartment" initialAmount="2.5" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" />
+      <species id="Z" compartment="compartment" initialAmount="2.5" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" />
+      <species id="_void_" compartment="compartment" initialAmount="0" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" />
+    </listOfSpecies>
+    <listOfParameters />
+    <listOfReactions>
+      <reaction id="R1" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+          <speciesReference species="A" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="X" stoichiometry="2" />
+        </listOfProducts>
+        <listOfModifiers />
+        <kineticLaw formula="k_1*X*A">
+          <listOfParameters>
+            <parameter id="k_1" value="3.2" constant="true" />
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+    <listOfComponents />
+  </model>
+</sbml>

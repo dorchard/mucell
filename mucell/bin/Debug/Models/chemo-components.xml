@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sbml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" level="2" version="3" xmlns="http://www.sbml.org/sbml/level2">
+  <model id="muCell Default">
+    <listOfCompartments>
+      <compartment id="compartment" spatialDimensions="3" size="1" constant="true" />
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="CheA" initialAmount="1000" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="242.524368" />
+          <yPosition value="125.680374" />
+        </annotation>
+      </species>
+      <species id="CheAp" initialAmount="1" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="215.582687" />
+          <yPosition value="238.745361" />
+        </annotation>
+      </species>
+      <species id="Attractant" initialAmount="1" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="165.5225" />
+          <yPosition value="69.2745361" />
+        </annotation>
+      </species>
+      <species id="CheB" initialAmount="1000" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="101.216461" />
+          <yPosition value="344.9318" />
+        </annotation>
+      </species>
+      <species id="CheBp" initialAmount="1" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="114.842445" />
+          <yPosition value="216.790039" />
+        </annotation>
+      </species>
+      <species id="CheY" initialAmount="100" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="303.40332" />
+          <yPosition value="373.326782" />
+        </annotation>
+      </species>
+      <species id="Repellent" initialAmount="1" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="88.66354" />
+          <yPosition value="119.443848" />
+        </annotation>
+      </species>
+      <species id="CheYp" initialAmount="1" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="364.9947" />
+          <yPosition value="297.118683" />
+        </annotation>
+      </species>
+    </listOfSpecies>
+    <listOfParameters />
+    <listOfReactions>
+      <reaction id="R1" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="CheA" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CheAp" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Attractant" />
+          <modifierSpeciesReference species="CheBp" />
+          <modifierSpeciesReference species="Repellent" />
+        </listOfModifiers>
+        <kineticLaw formula="50*(Repellent+1)/(1+CheBp+Attractant*CheBp)">
+          <listOfParameters />
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="166.756317" />
+          <yPosition value="155.448166" />
+        </annotation>
+      </reaction>
+      <reaction id="R2" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="CheAp" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CheA" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers />
+        <kineticLaw formula="50*CheAp">
+          <listOfParameters />
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="257.540558" />
+          <yPosition value="186.737671" />
+        </annotation>
+      </reaction>
+      <reaction id="R3" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="CheB" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CheBp" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CheAp" />
+        </listOfModifiers>
+        <kineticLaw formula="8*(CheAp-1)*CheBp">
+          <listOfParameters />
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="145.6099" />
+          <yPosition value="279.574524" />
+        </annotation>
+      </reaction>
+      <reaction id="R4" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="CheY" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CheYp" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CheAp" />
+        </listOfModifiers>
+        <kineticLaw formula="10*CheAp">
+          <listOfParameters />
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="286.432922" />
+          <yPosition value="296.679626" />
+        </annotation>
+      </reaction>
+      <reaction id="R5" fast="false" reversible="false">
+        <listOfReactants>
+ 
