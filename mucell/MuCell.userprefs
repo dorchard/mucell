@@ -1,0 +1,23 @@
+﻿<UserCombinePreferences version="1.0" filename="/sto/work/year4/project/mucell/MuCell/MuCell.mds">
+  <Files>
+    <File name="Welcome" />
+    <File name="View/SimulationEditorPanelUI.cs" line="298" column="72" />
+    <File name="Controller/SimulationEditorPanelController.cs" line="1" column="1" />
+    <File name="Controller/ApplicationController.cs" line="345" column="1" />
+    <File name="Model/TimeSeries.cs" line="1" column="1" />
+  </Files>
+  <Views>
+    <ViewMemento id="ProjectPad">
+      <Node expanded="True">
+        <Node name="MuCell" expanded="True">
+          <Node name="Model" expanded="True">
+            <Node name="Environment.cs" selected="True" />
+          </Node>
+        </Node>
+      </Node>
+    </ViewMemento>
+    <ViewMemento id="ClassPad">
+      <Node expanded="True" selected="True" />
+    </ViewMemento>
+  </Views>
+</UserCombinePreferences>

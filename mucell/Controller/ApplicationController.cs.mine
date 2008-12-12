@@ -1,0 +1,621 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Forms;
+using MuCell.View;
+using MuCell.Controller;
+using MuCell.Model;
+
+
+namespace MuCell.Controller
+{
+
+
+    /// <summary>
+    /// Controller for the application's main form. May also be refered to 
+    /// as the system controller.
+    /// </summary> 
+    public class ApplicationController 
+    {
+        private List<Model.Experiment> openExperiments;
+        private int currentExperimentID;
+        private String currentSimulationName;
+        private Timer timer1;
+
+
+        ExperimentTreePanelController experimentTreePanelController;
+        SimulationAnalyserPanelController simulationAnalyserPanelController;
+        SimulationEditorPanelController simulationEditorPanelController;
+        SpatialConfigurationPanelController spatialConfigurationPanelController;
+        CellDefinitionsPanelController cellDefinitionsPanelController;
+
+        /// <summary>
+        /// Runs the application
+        /// </summary> 
+        public void run()
+        {
+            ApplicationUI applicationUI;
+            IExperimentTreePanelUI experimentTreePanelUI;
+            ISimulationAnalyserPanelUI simulationAnalyserPanelUI;
+            ISimulationEditorPanelUI simulationEditorPanelUI;
+            ISpatialConfigurationPanelUI spatialConfigurationPanelUI;
+            ICellDefinitionsPanelUI cellDefinitionsPanelUI;
+
+            // make controllers
+            // construct controller using panel from experiment tree panel ui
+            // add (reference to) controller to panel
+            // add (reference to) this to controller
+            
+            //set application settings
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            //create the application UI
+            //creates all children panels
+            applicationUI = new ApplicationUI();
+            
+            //obtain panels from the applicationUI
+            experimentTreePanelUI = applicationUI.getExperimentTreePanelUI();
+            simulationAnalyserPanelUI = experimentTreePanelUI.getSimulationAnalyserPanelUI();
+            simulationEditorPanelUI = experimentTreePanelUI.getSimulationEditorPanelUI();
+            spatialConfigurationPanelUI = experimentTreePanelUI.getSpatialConfigurationPanelUI();
+            cellDefinitionsPanelUI = experimentTreePanelUI.getCellDefinitionsPanelUI();
+
+            //construct controllers
+            experimentTreePanelController = new ExperimentTreePanelController(experimentTreePanelUI);
+            simulationAnalyserPanelController = new SimulationAnalyserPanelController(simulationAnalyserPanelUI);
+            simulationEditorPanelController = new SimulationEditorPanelController(simulationEditorPanelUI);
+            spatialConfigurationPanelController = new SpatialConfigurationPanelController(spatialConfigurationPanelUI);
+            cellDefinitionsPanelController = new CellDefinitionsPanelController(cellDefinitionsPanelUI);
+
+            //set this application controller as the parent of the other controllers
+            experimentTreePanelController.setController(this);
+            simulationAnalyserPanelController.setController(this);
+            simulationEditorPanelController.setController(this);
+            spatialConfigurationPanelController.setController(this);
+            cellDefinitionsPanelController.setController(this);
+
+            //set the controllers for the panel UIs
+            applicationUI.setController(this);
+            experimentTreePanelUI.setController(experimentTreePanelController);
+            simulationAnalyserPanelUI.setController(simulationAnalyserPanelController);
+            simulationEditorPanelUI.setController(simulationEditorPanelController);
+            spatialConfigurationPanelUI.setController(spatialConfigurationPanelController);
+            cellDefinitionsPanelUI.setController(cellDefinitionsPanelController);
+
+            //create a list of open experiments
+            openExperiments = generateHardcodedExperiment();
+
+            //show the list of open experiments
+            experimentTreePanelUI.setOpenExperiments(getExperiments());
+
+            //set the currently selected experiment
+            experimentTreePanelUI.setSelectedExperiment(1);
+
+            //set the currently selected simulation
+            experimentTreePanelUI.setSelectedSimulation("sim 2");
+
+            //show simulation view
+            experimentTreePanelUI.showSimulationView();
+
+            //create timers
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Enabled = true;
+            timer1.Interval = 5;
+            timer1.Tick += new System.EventHandler(this.timer1_Tick);
+
+
+            //run the application UI
+            Application.Run(applicationUI);
+        }
+        public static IExperimentView ExperimentToIExperimentView(Experiment exp)
+        {
+            return (IExperimentView)exp;
+        }
+        public List<IExperimentView> getExperiments()
+        {
+            return openExperiments.ConvertAll(new Converter<Experiment, IExperimentView>(ExperimentToIExperimentView));
+        }
+
+
+
+        private List<Experiment> generateHardcodedExperiment()
+        {
+            List<Experiment> exps = new List<Experiment>();
+
+            Simulation sim1 = new Simulation("sim 1");
+            Simulation sim2 = new Simulation("sim 2");
+            Simulation sim3 = new Simulation("sim 3");
+            Simulation sim4 = new Simulation("sim 4");
+            Simulation sim5 = new Simulation("sim 5");
+            Simulation sim6 = new Simulation("sim 6");
+
+            sim1.Parameters.StepTime = 5.3d;
+            sim5.Parameters.StepTime = -6.3d;
+
+            CellDefinition cellDef1 = new CellDefinition("CellDef 1");
+            cellDef1.addSBMLModel("../../UnitTests/smallest.Hopf.xml");
+
+            CellDefinition cellDef2 = new CellDefinition("CellDef 2");
+            CellDefinition cellDef3 = new CellDefinition("CellDef 3");
+            CellDefinition cellDef4 = new CellDefinition("CellDef 4");
+            CellDefinition cellDef5 = new CellDefinition("CellDef 5");
+            CellDefinition cellDef6 = new CellDefinition("CellDef 6");
+            CellDefinition cellDef7 = new CellDefinition("CellDef 7");
+
+            
+
+            Experiment exp1 = new Experiment("Experiment 1");
+            Experiment exp2 = new Experiment("Experiment 2");
+            Experiment exp3 = new Experiment("Experiment 3");
+
+            exp1.Id = 1;
+            exp2.Id = 2;
+            exp3.Id = 3;
+
+            exp1.addCellDefinition(cellDef1);
+            exp1.addSimulation(sim1);
+            exp1.addSimulation(sim2);
+            exp1.addSimulation(sim3);
+
+            exp2.addCellDefinition(cellDef2);
+            exp2.addCellDefinition(cellDef3);
+            exp2.addCellDefinition(cellDef4);
+            exp2.addCellDefinition(cellDef5);
+            exp2.addSimulation(sim4);
+
+            exp3.addCellDefinition(cellDef6);
+            exp3.addCellDefinition(cellDef7);
+            exp3.addSimulation(sim5);
+            exp3.addSimulation(sim6);
+
+            exps.Add(exp1);
+            exps.Add(exp2);
+            exps.Add(exp3);
+
+            return exps;
+
+        }
+
+
+
+        /// <summary>
+        /// Saves an experiment to disc.
+        /// </summary> 
+        void saveExperiment(String path)
+        {
+        
+        }
+
+        /// <summary>
+        /// Loads an experiment from disc, adding it to the 
+        /// list of currently open experiments.
+        /// </summary> 
+        void loadExperiment(String path)
+        {
+
+        }
+
+        /// <summary>
+        /// Gets the currently selected experiment in the experiment tree.
+        /// </summary>
+        /// <returns>currently selected experiment, null if none is selected</returns>
+        public Experiment getCurrentExperiment()
+        {
+            foreach (Experiment experiment in openExperiments)
+            {
+                
+
+                if (experiment.Id == currentExperimentID)
+                {
+                    return experiment;
+                }
+            }
+
+            return null;
+        }
+
+
+        /// <summary>
+        /// Creates a new experiment, choosing an appropriate name and id
+        /// </summary> 
+        public void createNewExperiment()
+        {
+            int highestID = 0;
+            foreach (IExperimentView experiment in openExperiments)
+            {
+                if (experiment.Id > highestID)
+                {
+                    highestID = experiment.Id;
+                }
+            }
+
+            int experimentID = highestID + 1;
+            Experiment newExperiment = new Experiment("Experiment "+experimentID);
+            newExperiment.Id = experimentID;
+            openExperiments.Add(newExperiment);
+
+            experimentTreePanelController.refreshTreeElements(getExperiments());
+        }
+        /// <summary>
+        /// Creates a new simulation, choosing an appropriate name
+        /// </summary> 
+        public void createNewSimulation()
+        {
+            Experiment parentExperiment = null;
+            String namePrefix = "sim ";
+            int highestID = 1;
+            for (int attempt = 0; attempt < 1000; attempt++)
+            {
+                if (isSimulationNameTaken(namePrefix + highestID))
+                {
+                    highestID++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            foreach (Experiment experiment in openExperiments)
+            {
+                if (experiment.Id == currentExperimentID)
+                {
+                    parentExperiment = experiment;
+                    break;
+                }
+            }
+            if (parentExperiment != null)
+            {
+                Simulation simulation = new Simulation(namePrefix + highestID);
+                parentExperiment.addSimulation(simulation);
+                experimentTreePanelController.refreshTreeElements(getExperiments());
+            }
+        }
+        /// <summary>
+        /// Creates a new cell definition, choosing an appropriate name
+        /// </summary> 
+        public void createNewCellDefinition()
+        {
+            Experiment parentExperiment = null;
+            String namePrefix = "CellDef ";
+            int highestID = 1;
+            for (int attempt = 0; attempt < 1000; attempt++)
+            {
+                if (isCellDefinitionNameTaken(namePrefix + highestID))
+                {
+                    highestID++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            foreach (Experiment experiment in openExperiments)
+            {
+                if (experiment.Id == currentExperimentID)
+                {
+                    parentExperiment = experiment;
+                    break;
+                }
+            }
+            if (parentExperiment != null)
+            {
+                CellDefinition cell = new CellDefinition(namePrefix + highestID);
+                cell.addSBMLModel("../../UnitTests/blank.xml");
+                parentExperiment.addCellDefinition(cell);
+                experimentTreePanelController.refreshTreeElements(getExperiments());
+            }
+        }
+
+        public TimeSeries addTimeSeries(string name, string formula, double timeInterval)
+        {
+            Experiment currentExperiment = null;
+            Simulation currentSimulation = null;
+
+            foreach (Experiment e in openExperiments)
+            {
+                if (e.Id == currentExperimentID)
+                {
+                    currentExperiment = e;
+                    System.Console.WriteLine(currentExperiment.Id);
+                    break;
+                }
+            }
+
+            foreach (Simulation s in currentExperiment.getSimulations())
+            {
+                if (s.Name.Equals(currentSimulationName))
+                {
+                    currentSimulation = s;
+                    System.Console.WriteLine(currentSimulation.Name);
+                    break;
+                }
+            }
+
+            List<Model.SBML.Model> models = new List<MuCell.Model.SBML.Model>();
+            foreach (CellDefinition cd in currentExperiment.getCellDefinitions())
+            {
+                models.Add(cd.getModel());
+            }
+
+            if (currentSimulation != null)
+            {
+                try
+                {
+
+                    TimeSeries ts = new TimeSeries(name, formula, timeInterval);
+                    ts.Initialize(models, currentExperiment, currentSimulation);
+                    currentSimulation.Parameters.TimeSeries.Add(ts);
+                    return ts;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+            return null;
+        }
+
+        public bool isSimulationNameTaken(String name)
+        {
+            foreach (Experiment experiment in openExperiments)
+            {
+                foreach (Simulation sim in experiment.getSimulations())
+                {
+                    if (sim.Name.Equals(name))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public bool isCellDefinitionNameTaken(String name)
+        {
+            foreach (Experiment experiment in openExperiments)
+            {
+                foreach (CellDefinition cell in experiment.getCellDefinitions())
+                {
+                    if (cell.Name.Equals(name))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public void undo()
+        {
+            cellDefinitionsPanelController.undo();
+        }
+        public void redo()
+        {
+            cellDefinitionsPanelController.redo();
+        }
+        public void delete()
+        {
+            cellDefinitionsPanelController.removeSelection();
+        }
+        /// <summary>
+        /// Attempt to rename the experiment, returning whether the operation succeeded - false if the name already exists
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="newName"></param>
+        public bool renameExperiment(int id, String newName)
+        {
+            foreach (Experiment experiment in openExperiments)
+            {
+                if (experiment.Name.Equals(newName))
+                {
+                    return false;
+                }
+            }
+            foreach (Experiment experiment in openExperiments)
+            {
+                if (experiment.Id == id)
+                {
+                    experiment.Name = newName;
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+        /// <summary>
+        /// Attempt to rename the simulation, returning whether the operation succeeded - false if the name already exists
+        /// </summary>
+        /// <param name="oldName"></param>
+        /// <param name="newName"></param>
+        /// <returns></returns>
+        public bool renameSimulation(int experimentID, String oldName, String newName)
+        {
+            foreach (Experiment experiment in openExperiments)
+            {
+                if (experiment.Id == experimentID)
+                {
+                    foreach (Simulation sim in experiment.getSimulations())
+                    {
+                        if (sim.Name.Equals(newName))
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            foreach (Experiment experiment in openExperiments)
+            {
+                if (experiment.Id == experimentID)
+                {
+                    foreach (Simulation sim in experiment.getSimulations())
+                    {
+                        if (sim.Name.Equals(oldName))
+                        {
+                            sim.Name = newName;
+                            return true;
+                        }
+                    }
+                }
+            }
+            
+            return false;
+        }
+        public bool renameCellDefinition(int experimentID, String oldName, String newName)
+        {
+            foreach (Experiment experiment in openExperiments)
+            {
+                if (experiment.Id == experimentID)
+                {
+                    foreach (CellDefinition cell in experiment.getCellDefinitions())
+                    {
+                        if (cell.Name.Equals(newName))
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            foreach (Experiment experiment in openExperiments)
+            {
+                if (experiment.Id == experimentID)
+                {
+                    foreach (CellDefinition cell in experiment.getCellDefinitions())
+                    {
+                        if (cell.Name.Equals(oldName))
+                        {
+                            cell.Name = newName;
+                            return true;
+                        }
+                    }
+                }
+            }
+            
+            return false;
+        }
+        public void switchToCellDefinition(string name)
+        {
+            Console.WriteLine("Switching to cell definition " + name);
+            foreach (IExperimentView experiment in openExperiments)
+            {
+                if (experiment.Id == currentExperimentID)
+                {
+                    foreach (CellDefinition cell in experiment.getCellDefinitions())
+                    {
+                        if (cell.Name.Equals(name))
+                        {
+                            cellDefinitionsPanelController.showDefinition(cell);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void switchToSimulation(string name)
+        {
+            foreach (IExperimentView experiment in openExperiments)
+            {
+                if (experiment.Id == currentExperimentID)
+                {
+                    
+                    foreach (Simulation sim in experiment.getSimulations())
+                    {
+                        if (sim.Name.Equals(name))
+                        {
+                            simulationEditorPanelController.showParameters(sim.Parameters);
+                            spatialConfigurationPanelController.selectParameters(sim.Parameters);
+                            currentSimulationName = name;
+                        }
+                    }
+                }
+            }
+        }
+
+        //timer1 tick event: propagate tick throughout children controllers
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            spatialConfigurationPanelController.timer1Tick();
+        }
+
+
+
+        public void switchToExperiment(int ID)
+        {
+            currentExperimentID = ID;
+            spatialConfigurationPanelController.updateAvailableCellDefs();
+            //if any settings have changed, apply them and refresh the experiment tree panel to indicate them
+            foreach (IExperimentView experiment in openExperiments)
+            {
+                if (experiment.Id == currentExperimentID)
+                {
+                   
+                    foreach (Simulation sim in experiment.getSimulations())
+                    {
+                        if (sim.Name.Equals(currentSimulationName))
+                        {
+                            bool changedBefore = sim.Parameters.Changed;
+                            simulationEditorPanelController.applyChanges(sim.Parameters);
+                            if (sim.Parameters.Changed != changedBefore)
+                            {
+                                experimentTreePanelController.refreshTreeElements(getExperiments());
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+
+        public void deleteExperiment(int experimentID)
+        {
+            Experiment toDelete = null;
+            foreach (Experiment experiment in openExperiments)
+            {
+                if (experiment.Id == experimentID)
+                {
+                    toDelete = experiment;
+                    break;
+                }
+            }
+            if (toDelete != null)
+            {
+                openExperiments.Remove(toDelete);
+            }
+            experimentTreePanelController.refreshTreeElements(getExperiments());
+        }
+        public void deleteSimulation(int experimentID, String simulationName)
+        {
+            foreach (Experiment experiment in openExperiments)
+            {
+                if (experiment.Id == experimentID)
+                {
+                    foreach (Simulation sim in experiment.getSimulations())
+                    {
+                        if (sim.Name.Equals(simulationName))
+                        {
+                            experiment.removeSimulation(sim);
+                            break;
+                        }
+                    }
+                }
+            }
+            experimentTreePanelController.refreshTreeElements(getExperiments());
+        }
+        public void deleteCellDefinition(int experimentID, String cellDefinitionName)
+        {
+            foreach (Experiment experiment in openExperiments)
+            {
+                if (experiment.Id == experimentID)
+                {
+                    foreach (CellDefinition cell in experiment.getCellDefinitions())
+                    {
+                        if (cell.Name.Equals(cellDefinitionName))
+                        {
+                            experiment.removeCellDefinition(cell);
+                            break;
+                        }
+                    }
+                }
+            }
+            experimentTreePanelController.refreshTreeElements(getExperiments());
+        }
+    }
+}

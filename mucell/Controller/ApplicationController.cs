@@ -377,6 +377,7 @@ namespace MuCell.Controller
                 if (e.Id == currentExperimentID)
                 {
                     currentExperiment = e;
+                    System.Console.WriteLine(currentExperiment.Id);
                     break;
                 }
             }
@@ -385,11 +386,17 @@ namespace MuCell.Controller
             {
                 foreach (Simulation s in currentExperiment.getSimulations())
                 {
+<<<<<<< .mine
+                    currentSimulation = s;
+                    System.Console.WriteLine(currentSimulation.Name);
+                    break;
+=======
                     if (s.Name.Equals(currentSimulationName))
                     {
                         currentSimulation = s;
                         break;
                     }
+>>>>>>> .r398
                 }
 
                 foreach (CellDefinition cd in currentExperiment.getCellDefinitions())
