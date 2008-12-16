@@ -242,10 +242,15 @@ namespace MuCell.View
             List<TimeSeries> timeSeries = new List<TimeSeries>();
             foreach (TimeSeries ts in listOfTimeSeries.SelectedItems)
             {
+				System.Console.WriteLine(ts);
                 timeSeries.Add(ts);
             }
             TimeSeriesRawDataViewer dataViewer = new TimeSeriesRawDataViewer(timeSeries);
-            dataViewer.Show();
+			// hmm... why is this ended up as null?
+			if(dataViewer!=null)
+			{
+				dataViewer.Show();
+			}
         }
 
 

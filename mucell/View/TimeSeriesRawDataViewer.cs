@@ -16,6 +16,10 @@ namespace MuCell.View
     /// <owner>Jonathan</owner>
     public partial class TimeSeriesRawDataViewer : Form
     {
+    
+    	private int dataSize = 0;
+    	private string[] outputData;
+    
         /// <summary>
         /// Creates the window and fills the text box with the data from the time series provided
         /// </summary>
@@ -40,7 +44,7 @@ namespace MuCell.View
 
                 for (int i = 0; i < timeSeries.Count; i++)
                 {
-                    // find the number of times each time series' time interval divides into the common interval
+                    // find the number of times eatextBox1.Text.Split("\n");ch time series' time interval divides into the common interval
                     // this will be used to offset each data point by the correct number of rows later
                     timeIntervalMultiples[i] = (int)Math.Floor(decimal.Divide((decimal)timeSeries[i].Parameters.TimeInterval, minCommonTimeInterval));
 
@@ -57,6 +61,14 @@ namespace MuCell.View
 
                     int maxDataPoints = (int)Math.Floor(decimal.Divide((decimal)maxSeconds, minCommonTimeInterval));
                     string[] data = new string[maxDataPoints + 2 + timeSeries.Count];
+                   
+                   	this.dataSize = maxDataPoints + 2 + timeSeries.Count;
+                    
+                    // initialise to make sure there are no nulls
+                    for (int i=0;i<maxDataPoints + 2 + timeSeries.Count;i++)
+                    {
+                    	data[i] = "";
+                    }
 
                     // write the formulas used in the first few lines
                     for (int i = 0; i < timeSeries.Count; i++)
@@ -103,15 +115,30 @@ namespace MuCell.View
                         }
                     }
 
-                    textBox1.Lines = data;
-                }
+                    try {
+						
+						textBox1.Lines = data;
+						outputData = data;
+						
+					} catch (Exception e) {
+						//urk!
+						this.dataSize = 0;
+					}
+				}
                 else
                 {
-                    textBox1.Text = "No data";
+                	string[] nodata = new string[1];
+                	nodata[0] = "No data";
+                    textBox1.Lines = nodata;
+                    outputData = nodata;
+                    this.dataSize = 1;
                 }
             } else {
-
-                textBox1.Text = "No data";
+                	string[] nodata = new string[1];
+                	nodata[0] = "No data";
+                    textBox1.Lines = nodata;
+                    outputData = nodata;
+                    this.dataSize = 1;
             }
         }
 
@@ -141,25 +168,35 @@ namespace MuCell.View
         private void btnExportData_Click(object sender, EventArgs e)
         {
             saveDataDialog.ShowDialog();
-            if (saveDataDialog.FileName != "")
+            if (saveDataDialog.FileName != "" && outputData!=null)
             {
                 // user chose a file to write
 
                 TextWriter fileWriter = new StreamWriter(saveDataDialog.FileName);
 
                 // iterate through data rows in text box to write to the file
-                foreach (string line in textBox1.Lines)
+			
+                for (int i=0;i<this.dataSize;i++)
                 {
-                    if (saveDataDialog.FilterIndex == 1)
-                    {
-                        // chosen comma separated variable file
-                        // replace tabs with commas
-                        fileWriter.WriteLine(line.Replace('\t', ','));
-                    }
-                    else
-                    {
-                        fileWriter.WriteLine(line);
-                    }
+                	try 
+                	{
+	                	string line = outputData[i];
+	                	
+	                    if (saveDataDialog.FilterIndex == 1)
+	                    {
+	                        // chosen comma separated variable file
+	                        // replace tabs with commas
+	                        fileWriter.WriteLine(line.Replace('\t', ','));
+	                    }
+	                    else
+	                    {
+	                        fileWriter.WriteLine(line);
+	                    }
+					}
+					catch (System.ArgumentOutOfRangeException excp)
+					{
+						// HM!
+					}
                 }
 
                 fileWriter.Close();

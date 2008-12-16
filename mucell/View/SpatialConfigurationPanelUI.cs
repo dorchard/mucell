@@ -2725,23 +2725,23 @@ namespace MuCell.View
             }
         }
 
-        private void tmpCellTest_Click(object sender, EventArgs e)
-        {
-            //return if simulation is not yet set
-            if (controller.GetSelectedSimulationParameters() == null)
-            {
-                return;
-            }
-
-
-            this.cellsGogo = !this.cellsGogo;
-            Random rand = new Random();
-            foreach (CellInstance cell in controller.GetSelectedSimulationParameters().InitialState.Cells)
-            {
-                cell.SetRandomObject(rand);
-            }
-
-        }
+//        private void tmpCellTest_Click(object sender, EventArgs e)
+//        {
+//            //return if simulation is not yet set
+//            if (controller.GetSelectedSimulationParameters() == null)
+//            {
+//                return;
+//            }
+//
+//
+//            this.cellsGogo = !this.cellsGogo;
+//            Random rand = new Random();
+//            foreach (CellInstance cell in controller.GetSelectedSimulationParameters().InitialState.Cells)
+//            {
+//                cell.SetRandomObject(rand);
+//            }
+//
+//        }
 
         private void viewNutrient_Click(object sender, EventArgs e)
         {

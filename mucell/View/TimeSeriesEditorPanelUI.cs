@@ -93,6 +93,9 @@ namespace MuCell.View
             {
                 listOfContextSpecies.Items.Add(s.ID.Replace(' ', '_'));
             }
+            // temporary
+            listOfContextSpecies.Items.Add("runTime");
+            listOfContextSpecies.Items.Add("twiddleTime");
         }
 
         public void setListOfTimeSeries(List<TimeSeries> timeSeries)
@@ -213,6 +216,7 @@ namespace MuCell.View
             {
                 string oldFormula = ts.Parameters.FunctionString;
                 ts.Parameters.FunctionString = txtFormula.Text;
+                System.Console.WriteLine("formula = "+ts.Parameters.FunctionString);
                 if (controller.validateTimeSeries(ts))
                 {
                     // success

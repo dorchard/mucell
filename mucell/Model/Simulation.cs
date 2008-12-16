@@ -90,8 +90,9 @@ namespace MuCell.Model
         /// </summary>
         public Simulation()
         {
-            // Seeds the random object
-            this.randomObject = new Random(0);
+            int seed = Math.Abs((int)(DateTime.Now.Ticks));
+            System.Console.WriteLine("Seeding simulation random object - seed = "+seed.ToString());
+            this.randomObject = new Random(seed);
             this.snapshotCache = new SnapshotCache(10);
             this.currentState = null;
         }
@@ -109,8 +110,10 @@ namespace MuCell.Model
             this.SimulationResults = new Results();
             this.listener = null;
 
-            // Seeds the random object
-            this.randomObject = new Random(0);
+            // Seeds the random object based on the time
+            int seed = Math.Abs((int)(DateTime.Now.Ticks));
+            System.Console.WriteLine("Seeding simulation random object - seed = "+seed.ToString());
+            this.randomObject = new Random(seed);
             this.snapshotCache = new SnapshotCache(10);
             this.currentState = null;
         }
@@ -173,8 +176,10 @@ namespace MuCell.Model
             {
                 cell.ResetCellConcentrations(this.parameters.InitialState);
                 cell.InitializeCellModel(this.parameters.SolverMethod, this.parameters);
-                // set the random object in the cell
-                cell.SetRandomObject(this.randomObject);
+                // set the random object in the cell seeded by the simulations random object
+                int random = this.randomObject.Next();
+                System.Console.WriteLine("Generating new random with seed - "+random.ToString());
+                cell.SetRandomObject(new Random(this.randomObject.Next(random)));
             }
 
         }

@@ -64,7 +64,10 @@ namespace MuCell.Model.SBML.ExtracellularComponents
 
         
         }
-
+        
+        // <note> temporary add-ins for recording running time and twiddle time for a cell </note>
+        public double runTime = 0.0d;
+        public double twiddleTime = 0.0d;
 
         /// <summary>
         /// Returns an object assosiated with this component containing world
@@ -78,8 +81,10 @@ namespace MuCell.Model.SBML.ExtracellularComponents
 
         public override void InitializeInEnvironment(CellInstance cell, ComponentWorldStateBase compData, StateSnapshot state)
         {
-
+			this.runTime = 0.0d;
+			this.twiddleTime = 0.0d;
         }
+
 
         /// <summary>
         /// Execute a timestep, manipulating data accordingly
@@ -92,45 +97,54 @@ namespace MuCell.Model.SBML.ExtracellularComponents
         {
             FlagellaWorldState flage = (FlagellaWorldState)compData;
 
-
             //NutrientField attractant = state.SimulationEnvironment.GetNutrientFieldObject(attractantIndex);
             //NutrientField repellent = state.SimulationEnvironment.GetNutrientFieldObject(repellentIndex);
             float valueFromCircuit = (float)cell.getLocalSimulationSpeciesAmount(getSpeciesReference(0, ComponentLinkType.Input).species.ID);
 
+			// Tumble
             if (flage.TumbleState)
             {
+            	// update twiddle time
+            	this.twiddleTime=timeStep;
+            	this.runTime=0.0d;
+            
                 flage.TumbleCounter += (float)timeStep;
 
-
+				//System.Console.WriteLine("twiddling "+cell.GroupID);
 
                 //end of tumble
                 if (flage.TumbleCounter > tumbleDuration)
                 {
-                    cell.CellInstanceSpatialContext.Reorientate(new Vector3((float)(cell.GetRandomObject().NextDouble() * 2 - 1),
-                                                             (float)(cell.GetRandomObject().NextDouble() * 2 - 1),
-                                                             (float)(cell.GetRandomObject().NextDouble() * 2 - 1)));
+                	System.Random random = cell.GetRandomObject();
+                    cell.CellInstanceSpatialContext.Reorientate(new Vector3((float)(random.NextDouble() * 2 - 1),
+                                                             (float)(random.NextDouble() * 2 - 1),
+                                                             (float)(random.NextDouble() * 2 - 1)));
              
                     flage.TumbleState = false;
-                    //up to 50% varience in next tumble duration
-                    flage.TumbleCounter = 0.0f + tumbleDuration*0.5f*(float)cell.GetRandomObject().NextDouble();
+                    //up to 50% variance in next tumble duration
+                    flage.TumbleCounter = 0.0f + tumbleDuration*0.5f*(float)random.NextDouble();
+                    //System.Console.WriteLine("tc - group = "+cell.GroupID+" Tc = "+flage.TumbleCounter.ToString());
 
                 }
 
               
             }
+            // Run
             else
             {
-
+				this.twiddleTime = 0.0d;
+				this.runTime=timeStep;
+				
+				//System.Console.WriteLine("running "+cell.GroupID);
 
                 flage.TumbleUpdateCounter += (float)timeStep;
 
                 //Randomly decide whether or not to tumble according to some likelihood
                 if (flage.TumbleUpdateCounter > 1.0f / TumbleUpdateFrequency)
                 {
-                    float val = flage.TumbleLikelihood - (float)cell.GetRandomObject().NextDouble();
-
-                 
-                    if (flage.TumbleLikelihood - (float)cell.GetRandomObject().NextDouble() > 0)
+                	float val = flage.TumbleLikelihood - (float)cell.GetRandomObject().NextDouble();
+                	//System.Console.WriteLine("cell - group = "+cell.GroupID+" val = "+val.ToString());
+                    if (val > 0)
                     {
                         //tumble
                         flage.TumbleState = true;
@@ -139,66 +153,150 @@ namespace MuCell.Model.SBML.ExtracellularComponents
                     flage.TumbleUpdateCounter = 0.0f;
                 }
 
-
-                flage.SampleCounter += (float)timeStep;
-
                 //propel cell forward
                 cell.CellInstanceSpatialContext.Accelerate(new Vector3(
                     cell.CellInstanceSpatialContext.Orientation.x * motiveStength * (float)timeStep,
                     cell.CellInstanceSpatialContext.Orientation.y * motiveStength * (float)timeStep,
                     cell.CellInstanceSpatialContext.Orientation.z * motiveStength * (float)timeStep));
 
-                if (flage.SampleCounter > 0.4f)
+				// Adjust likelihood of twiddle based on chemical value
+                if (valueFromCircuit > 1.0f)
                 {
-                    /*
-                    if (!flage.FirstSampleTaken)
-                    {
-                        //flage.FirstSample = attractant.GetNutrientLevel(cell.CellInstanceSpatialContext.Position);
-                        flage.FirstSample = valueFromCircuit;
-                        flage.FirstSampleTaken = true;
-                    }*/
+                    flage.TumbleLikelihood = 0.90f;
                 }
-
-                if (flage.SampleCounter > 0.8f)
+                else
                 {
-
-                   // float SecondSample = attractant.GetNutrientLevel(cell.CellInstanceSpatialContext.Position);
-                    /*
-                    float SecondSample = valueFromCircuit;
-
-                    if (SecondSample > flage.FirstSample)
-                    {
-                        //continue going straight
-                        flage.TumbleLikelihood = 0.001f;
-                        
-                      
-                    }
-                    else
-                    {
-                        //tumble
-                        flage.TumbleLikelihood = 0.995f;
-
-                    }*/
-
-                    if (valueFromCircuit > 1.0f)
-                    {
-                        flage.TumbleLikelihood = 0.90f;
-                    }
-                    else
-                    {
-                        flage.TumbleLikelihood = 0.1f;
-                    }
-
-                    flage.SampleCounter = 0.0f;
-                   // flage.FirstSampleTaken = false;
-                    
-                    
-                }
+                    flage.TumbleLikelihood = 0.1f;
+                }
 
             }
 
 
         }
+
+//        /// <summary>
+//        /// Execute a timestep, manipulating data accordingly
+//        /// </summary>
+//        /// <param name="cell">The cell to which this component belongs</param>
+//        /// <param name="state">The current environment state</param>
+//        /// <param name="time">Simulation time</param>
+//        /// <param name="timeStep">Simulation time step</param>
+//        public override void DoTimeStep(CellInstance cell, ComponentWorldStateBase compData,StateSnapshot state, double time, double timeStep)
+//        {
+//            FlagellaWorldState flage = (FlagellaWorldState)compData;
+//
+//            //NutrientField attractant = state.SimulationEnvironment.GetNutrientFieldObject(attractantIndex);
+//            //NutrientField repellent = state.SimulationEnvironment.GetNutrientFieldObject(repellentIndex);
+//            float valueFromCircuit = (float)cell.getLocalSimulationSpeciesAmount(getSpeciesReference(0, ComponentLinkType.Input).species.ID);
+//
+//            if (flage.TumbleState)
+//            {
+//            	// update twiddle time
+//            	this.twiddleTime=timeStep;
+//            	this.runTime=0.0d;
+//            
+//                flage.TumbleCounter += (float)timeStep;
+//
+//
+//
+//                //end of tumble
+//                if (flage.TumbleCounter > tumbleDuration)
+//                {
+//                	System.Random random = cell.GetRandomObject();
+//                    cell.CellInstanceSpatialContext.Reorientate(new Vector3((float)(random.NextDouble() * 2 - 1),
+//                                                             (float)(random.NextDouble() * 2 - 1),
+//                                                             (float)(random.NextDouble() * 2 - 1)));
+//             
+//                    flage.TumbleState = false;
+//                    //up to 50% variance in next tumble duration
+//                    flage.TumbleCounter = 0.0f + tumbleDuration*0.5f*(float)random.NextDouble();
+//
+//                }
+//
+//              
+//            }
+//            else
+//            {
+//				this.twiddleTime = 0.0d;
+//				this.runTime=timeStep;
+//
+//                flage.TumbleUpdateCounter += (float)timeStep;
+//
+//                //Randomly decide whether or not to tumble according to some likelihood
+//                if (flage.TumbleUpdateCounter > 1.0f / TumbleUpdateFrequency)
+//                {
+//                    float val = flage.TumbleLikelihood - (float)cell.GetRandomObject().NextDouble();
+//
+//                 
+//                    if (flage.TumbleLikelihood - (float)cell.GetRandomObject().NextDouble() > 0)
+//                    {
+//                        //tumble
+//                        flage.TumbleState = true;
+//                    }
+//
+//                    flage.TumbleUpdateCounter = 0.0f;
+//                }
+//
+//
+//                flage.SampleCounter += (float)timeStep;
+//
+//                //propel cell forward
+//                cell.CellInstanceSpatialContext.Accelerate(new Vector3(
+//                    cell.CellInstanceSpatialContext.Orientation.x * motiveStength * (float)timeStep,
+//                    cell.CellInstanceSpatialContext.Orientation.y * motiveStength * (float)timeStep,
+//                    cell.CellInstanceSpatialContext.Orientation.z * motiveStength * (float)timeStep));
+//
+//                if (flage.SampleCounter > 0.4f)
+//                {
+//                    /*
+//                    if (!flage.FirstSampleTaken)
+//                    {
+//                        //flage.FirstSample = attractant.GetNutrientLevel(cell.CellInstanceSpatialContext.Position);
+//                        flage.FirstSample = valueFromCircuit;
+//                        flage.FirstSampleTaken = true;
+//                    }*/
+//                }
+//
+//                if (flage.SampleCounter > 0.8f)
+//                {
+//
+//                   // float SecondSample = attractant.GetNutrientLevel(cell.CellInstanceSpatialContext.Position);
+//                    /*
+//                    float SecondSample = valueFromCircuit;
+//
+//                    if (SecondSample > flage.FirstSample)
+//                    {
+//                        //continue going straight
+//                        flage.TumbleLikelihood = 0.001f;
+//                        
+//                      
+//                    }
+//                    else
+//                    {
+//                        //tumble
+//                        flage.TumbleLikelihood = 0.995f;
+//
+//                    }*/
+//
+//                    if (valueFromCircuit > 1.0f)
+//                    {
+//                        flage.TumbleLikelihood = 0.90f;
+//                    }
+//                    else
+//                    {
+//                        flage.TumbleLikelihood = 0.1f;
+//                    }
+//
+//                    flage.SampleCounter = 0.0f;
+//                   // flage.FirstSampleTaken = false;
+//                    
+//                    
+//                }
+//
+//            }
+//
+//
+//        }
 
 
 

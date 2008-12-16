@@ -48,6 +48,16 @@ namespace MuCell.Model.SBML
     			get { return species; }
     			set { species = value; }
     		}
+		
+            // <note> This is a temporary hack to get some results for a paper - will be implemented properly soon </note>		
+		    private string flagellaTracker;
+			public string FlagellaTracker 
+		{
+			
+			get { return flagellaTracker; }
+			set { flagellaTracker = value; }
+		}
+		
     
     		/// <summary>
     		/// Base constructor
@@ -63,6 +73,7 @@ namespace MuCell.Model.SBML
 		
 		public override AggregateEvaluationFunction ToAggregateEvaluationFunction()
         {
+        		// <Todo> Improve this so that smaller and faster functions are produced
         		return delegate(StateSnapshot s)
         		{
         			if (this.species == null && this.group == null && this.cellDefinition == null)
@@ -86,25 +97,25 @@ namespace MuCell.Model.SBML
         				else
         				{
 	        				cells = state.Cells;
-    		    			}
+    		    		}
         			
         				// Test celldefinitions
-    		    			if(this.cellDefinition != null)
-					{
-						List<CellInstance> tempCells = new List<CellInstance>();
-						// Foreach cell
-						foreach(CellInstance cell in cells)
-						{
-							// If it has the correct celldefinition
-							if (cell.CellInstanceDefinition.Name == this.cellDefinition.Name)
-							{
-								// Add to the list
+    		    		if(this.cellDefinition != null)
+					    {
+						    List<CellInstance> tempCells = new List<CellInstance>();
+						    // Foreach cell
+						   foreach(CellInstance cell in cells)
+						   {
+							  // If it has the correct celldefinition
+							  if (cell.CellInstanceDefinition.Name == this.cellDefinition.Name)
+							  {
+  								 // Add to the list
 								 tempCells.Add(cell);
-							}
-						}
-						// Set the new list to the old list
-						cells = tempCells;
-					}
+							  }
+						   }
+						   // Set the new list to the old list
+						   cells = tempCells;
+					    }
 					
 					// Now test Species
 					if (this.species != null)
@@ -120,8 +131,45 @@ namespace MuCell.Model.SBML
 					}
 					else
 					{
-						// No species ref so just return the population amount
-						return (double)cells.Count;
+						// See if we have a flagellaTracker 
+						if (this.flagellaTracker!=null)
+						{
+							// record twiddle time for all cells
+							if (this.flagellaTracker=="twiddleTime")
+							{
+								double twiddleTime = 0.0d;
+							    foreach (CellInstance cell in cells)
+								{
+									SBML.ExtracellularComponents.FlagellaComponent flagella = cell.getFlagella();
+									if (flagella!=null)
+									{
+										twiddleTime+=flagella.twiddleTime;
+									}
+								}
+								return twiddleTime;
+							}
+							// record run time for all cells
+							else if (this.flagellaTracker=="runTime")
+							{
+								double runTime = 0.0d;
+								foreach (CellInstance cell in cells)
+								{
+									SBML.ExtracellularComponents.FlagellaComponent flagella = cell.getFlagella();
+									if (flagella!=null)
+									{
+										runTime+=flagella.runTime;
+									}
+								}
+								return runTime;
+							} else {
+								return (double)cells.Count;
+							}
+						}
+						else 
+						{
+							// No species ref so just return the population amount
+							return (double)cells.Count;
+						}
 					}
 				}
         		};

@@ -159,6 +159,11 @@ namespace MuCell.Model
             {
                 clonedComponents.Add((SBML.ExtracellularComponents.ComponentWorldStateBase)componentWorldState.Clone());
             }
+            // generate some more randomness
+            if (this.randomObject!=null)
+            {
+            	this.randomObject.Next();
+            }
 
             // create the objects
             CellInstance cloned = new CellInstance(this.cellInstanceDefinition, (SpatialContext)this.cellInstanceSpatialContext.Clone(),
@@ -603,6 +608,19 @@ namespace MuCell.Model
                 this.speciesVariables[indexToSpeciesMap[i]] = this.solver.GetValue(i);
             }
 
+        }
+        
+        // <note> Hacked in for getting results for a paper - will be added in properly later </note>
+        public SBML.ExtracellularComponents.FlagellaComponent getFlagella()
+        {
+        	foreach (SBML.ExtracellularComponents.ComponentWorldStateBase component in this.components)
+        	{
+				if (component.ComponentType.ComponentType.Equals("Flagella"))
+				{
+					return (SBML.ExtracellularComponents.FlagellaComponent)component.ComponentType;
+				}
+        	}
+        	return null;
         }
 
         public bool exptEquals(CellInstance other)

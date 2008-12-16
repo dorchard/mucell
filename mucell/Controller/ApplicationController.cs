@@ -386,17 +386,17 @@ namespace MuCell.Controller
             {
                 foreach (Simulation s in currentExperiment.getSimulations())
                 {
-<<<<<<< .mine
-                    currentSimulation = s;
-                    System.Console.WriteLine(currentSimulation.Name);
-                    break;
-=======
+//<<<<<<< .mine
+//                    currentSimulation = s;
+//                    System.Console.WriteLine(currentSimulation.Name);
+//                    break;
+//=======
                     if (s.Name.Equals(currentSimulationName))
                     {
                         currentSimulation = s;
                         break;
                     }
->>>>>>> .r398
+////>>>>>>> .r398
                 }
 
                 foreach (CellDefinition cd in currentExperiment.getCellDefinitions())
@@ -412,8 +412,9 @@ namespace MuCell.Controller
                     ts.Initialize(models, currentExperiment, currentSimulation);
                     return true;
                 }
-                catch
+                catch (Exception e)
                 {
+                	System.Console.Write(e.ToString());
                     return false;
                 }
             }

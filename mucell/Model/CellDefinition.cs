@@ -188,6 +188,23 @@ namespace MuCell.Model
 
             return newInstance;
         }
+        
+        // Ask the cell definition if this component is available
+        public bool HasComponent(string componentName)
+        {
+        	if (this.sbmlModel.listOfComponents != null)
+        	{
+        		foreach(SBML.ExtracellularComponents.ComponentBase component in this.sbmlModel.listOfComponents)
+        		{
+        			if (component.ComponentType.Equals(componentName))
+        			{
+        				return true;
+        			}
+        		}
+        	}
+        	return false;
+        }
+
 
         /// <summary>
         /// Checks which nutrient fields required by this cell definition are missing
@@ -245,6 +262,7 @@ namespace MuCell.Model
         {
             return sbmlModel;
         }
+
 
         public bool exptEquals(CellDefinition other)
         {

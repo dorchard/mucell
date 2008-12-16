@@ -584,7 +584,20 @@ namespace MuCell.Model.SBML
             }
             else
             {
-            	return false;
+            	if (token.Equals("twiddleTime"))
+            	{
+            		node.FlagellaTracker="twiddleTime";
+            		return true;
+            	}
+            	else if (token.Equals("runTime"))
+            	{
+            		node.FlagellaTracker="runTime";
+            		return true;
+            	}
+            	else
+            	{
+            		return false;
+            	}
             }
         }
 
