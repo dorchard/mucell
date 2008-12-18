@@ -235,6 +235,8 @@ namespace MuCell.Model
         /// </summary>
         public void ResetCellConcentrations(StateSnapshot initialState)
         {
+        	this.convertSpeciesListToVariables();
+        
             foreach (Species s in this.species)
             {
                 this.speciesVariables[s.ID] = s.initialValue;
@@ -260,8 +262,8 @@ namespace MuCell.Model
             int i;
             for (i = 0; i < this.N; i++)
             {
-                // Set local species variable
-                this.localSpeciesVariables[indexToSpeciesMap[i]] = y[i];
+				// Set local species variable
+               	this.localSpeciesVariables[indexToSpeciesMap[i]] = y[i];
                 // Set delta to 0
                 this.localSpeciesDelta[indexToSpeciesMap[i]] = 0.0;
             }
@@ -458,6 +460,8 @@ namespace MuCell.Model
         /// </param>
         public unsafe void InitializeCellModel(Solver.SolverMethods solverMethod, SimulationParameters parameters)
         {
+        
+        	
 
             // Find out number of variable species
             int n = 0;
@@ -500,7 +504,7 @@ namespace MuCell.Model
                     }
                 }
 
-                // Create CVODE interface object
+                // Create CVODE interface obj:ect
                 this.solver = new Solver.CVode(n, values,
                     new Solver.CVode.ModelFunction(delegate(double time, IntPtr y, IntPtr ydot, IntPtr fdata)
                     {

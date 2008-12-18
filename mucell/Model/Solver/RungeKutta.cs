@@ -109,6 +109,9 @@ namespace MuCell.Model.Solver
 				for(int i=0;i<this.n;i++)
 				{
 					this.y[i] = this.y[i] + slope[i];
+					if (this.y[i]<0){
+						this.y[i]=0;
+					}
 				}
 				
 				this.time = time+timeStep;

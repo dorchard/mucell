@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version3" metaid="metaid_0000001" level="2" version="3">
+  <model metaid="metaid_0000002" id="model_0000001" name="bray1993_chemotaxis_intracellularreaction">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This model originates from BioModels Database: A Database of Annotated Published Models. It is copyright (c) 2005-2008 The BioModels Team.
+        <br/>For more information see the 
+        <a href="http://www.ebi.ac.uk/biomodels/legal.html" target="_blank">terms of use</a>.
+        <br/>To cite BioModels Database, please use 
+        <a href="http://www.pubmedcentral.nih.gov/articlerender.fcgi?tool=pubmed&amp;pubmedid=16381960" target="_blank"> Le Novère N., Bornstein B., Broicher A., Courtot M., Donizelli M., Dharuri H., Li L., Sauro H., Schilstra M., Shapiro B., Snoep J.L., Hucka M. (2006) BioModels Database: A Free, Centralized Database of Curated, Published, Quantitative Kinetic Models of Biochemical and Cellular Systems Nucleic Acids Res., 34: D689-D691.</a>
+      </p>
+    </body>
+  </notes>
+  <annotation>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+      <rdf:Description rdf:about="#metaid_0000002">
+        <dc:creator rdf:parseType="Resource">
+          <rdf:Bag>
+            <rdf:li rdf:parseType="Resource">
+              <vCard:N rdf:parseType="Resource">
+                <vCard:Family>Endler</vCard:Family>
+                <vCard:Given>Lukas</vCard:Given>
+              </vCard:N>
+              <vCard:EMAIL>lukas@ebi.ac.uk</vCard:EMAIL>
+              <vCard:ORG>
+                <vCard:Orgname>EMBL-EBI</vCard:Orgname>
+              </vCard:ORG>
+            </rdf:li>
+            <rdf:li rdf:parseType="Resource">
+              <vCard:N rdf:parseType="Resource">
+                <vCard:Family>Chelliah</vCard:Family>
+                <vCard:Given>Vijayalakshmi</vCard:Given>
+              </vCard:N>
+              <vCard:EMAIL>viji@ebi.ac.uk</vCard:EMAIL>
+              <vCard:ORG>
+                <vCard:Orgname>EMBL-EBI</vCard:Orgname>
+              </vCard:ORG>
+            </rdf:li>
+            <rdf:li rdf:parseType="Resource">
+              <vCard:N rdf:parseType="Resource">
+                <vCard:Family>Bray</vCard:Family>
+                <vCard:Given>Dennis</vCard:Given>
+              </vCard:N>
+              <vCard:EMAIL>db10009@cam.ac.uk</vCard:EMAIL>
+              <vCard:ORG>
+                <vCard:Orgname>Department of Physiology, Development and Neuroscience - University of Cambridge</vCard:Orgname>
+              </vCard:ORG>
+            </rdf:li>
+          </rdf:Bag>
+        </dc:creator>
+        <dcterms:created rdf:parseType="Resource">
+          <dcterms:W3CDTF>2008-11-03T11:29:04Z</dcterms:W3CDTF>
+        </dcterms:created>
+        <dcterms:modified rdf:parseType="Resource">
+          <dcterms:W3CDTF>2008-11-20T13:17:02Z</dcterms:W3CDTF>
+        </dcterms:modified>
+        <bqmodel:is>
+          <rdf:Bag>
+            <rdf:li rdf:resource="urn:miriam:biomodels.db:MODEL6929313478"/>
+          </rdf:Bag>
+        </bqmodel:is>
+        <bqmodel:isDescribedBy>
+          <rdf:Bag>
+            <rdf:li rdf:resource="urn:miriam:pubmed:8334303"/>
+          </rdf:Bag>
+        </bqmodel:isDescribedBy>
+      </rdf:Description>
+    </rdf:RDF>
+  </annotation>
+  <listOfUnitDefinitions>
+    <unitDefinition metaid="metaid_0000051" id="peruMpersec" name="peruMpersec">
+      <listOfUnits>
+        <unit kind="litre"/>
+        <unit kind="mole" exponent="-1" scale="-6"/>
+        <unit kind="second" exponent="-1"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="metaid_0000052" id="persec" name="persec">
+      <listOfUnits>
+        <unit kind="second" exponent="-1"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="metaid_0000053" id="volume" name="femtolitre">
+      <listOfUnits>
+        <unit kind="litre" scale="-15"/>
+      </listOfUnits>
+    </unitDefinition>
+    <unitDefinition metaid="metaid_0000054" id="uM" name="uM">
+      <listOfUnits>
+        <unit kind="mole" scale="-6"/>
+        <unit kind="litre" exponent="-1"/>
+      </listOfUnits>
+    </unitDefinition>
+  </listOfUnitDefinitions>
+  <listOfCompartments>
+    <compartment metaid="metaid_0000003" id="cell" name="cell" size="1.41"/>
+    <compartment metaid="metaid_0000055" id="exterior" name="exterior" size="1"/>
+  </listOfCompartments>
+  <listOfSpecies>
+    <species metaid="metaid_0000004" id="asp" name="asp" compartment="cell" initialConcentration="0" boundaryCondition="true"/>
+    <species metaid="metaid_0000005" id="ni" name="ni" compartment="cell" initialConcentration="0" boundaryCondition="true"/>
+    <species metaid="metaid_0000006" id="T" name="T" compartment="cell" initialConcentration="3.12"/>
+    <species metaid="metaid_0000007" id="Tasp" name="Tasp" compartment="cell" initialConcentration="0"/>
+    <species metaid="metaid_0000008" id="Tni" name="Tni" compartment="cell" initialConcentration="0"/>
+    <species metaid="metaid_0000009" id="W" name="W" compartment="cell" initialConcentration="2.89"/>
+    <species metaid="metaid_0000010" id="TW" name="TW" compartment="cell" initialConcentration="0.591"/>
+    <species metaid="metaid_0000011" id="Tasp_W" name="Tasp_W" compartment="cell" initialConcentration="0"/>
+    <species metaid="metaid_0000012" id="Tni_W" name="Tni_W" compartment="cell" initialConcentration="0"/>
+    <species metaid="metaid_0000013" id="TA" name="TA" compartment="cell" initialConcentration="0.444"/>
+    <species metaid="metaid_0000014" id="Tasp_A" name="Tasp_A" compartment="cell" initialConcentration="0"/>
+    <species metaid="metaid_0000015" id="Tni_A" name="Tni_A" compartment="cell" initialConcentration="0"/>
+    <species metaid="metaid_0000016" id="WA" name="WA" compartment="cell" initialConcentration="0.678"/>
+    <species metaid="metaid_0000017" id="TWA" name="TWA" compartment="cell" initialConcentration="0.847"/>
+    <species metaid="metaid_0000018" id="Tasp_WA" name="Tasp_WA" compartment="cell" initialConcentration="0"/>
+    <species metaid="metaid_0000019" id="Tni_WA" name="Tni_WA" compartment="cell" initialConcentration="0"/>
+    <species metaid="metaid_0000020" id="A" name="A" compartment="cell" initialConcentration="3"/>
+    <species metaid="metaid_0000021" id="Ap" name="Ap" compartment="cell" initialConcentration="0.0349"/>
+    <species metaid="metaid_0000022" id="B" name="B" compartment="cell" initialConcentration="1.93"/>
+    <species metaid="metaid_0000023" id="Bp" name="Bp" compartment="cell" initialConcentration="0.0687"/>
+    <species metaid="metaid_0000024" id="Z" name="Z" compartment="cell" initialConcentration="20"/>
+    <species metaid="metaid_0000025" id="Y" name="Y" compartment="cell" initialConcentration="9.99"/>
+    <species metaid="metaid_0000026" id="Yp" name="Yp" compartment="cell" initialConcentration="0.007"/>
+    <species metaid="metaid_0000027" id="M" name="M" compartment="cell" initialConcentration="0.00624"/>
+    <species metaid="metaid_0000028" id="MYp" name="MYp" compartment="cell" initialConcentration="0.00077"/>
+    <species metaid="metaid_0000029" id="MYpYp" name="MYpYp" compartment="cell" initialConcentration="0.000299"/>
+    <species metaid="metaid_0000030" id="MYpYpYp" name="MYpYpYp" compartment="cell" initialConcentration="0.000378"/>
+    <species metaid="metaid_0000031" id="MYpYpYpYp" name="MYpYpYpYp" compartment="cell" initialConcentration="0.00231"/>
+  </listOfSpecies>
+  <listOfParameters>
+    <parameter metaid="metaid_0000057" id="alpha" name="alpha" value="0.14"/>
+    <parameter metaid="metaid_0000058" id="kappa" name="kappa" value="0.225"/>
+    <parameter metaid="metaid_0000059" id="ka" name="ka" value="100" units="peruMpersec"/>
+    <parameter metaid="metaid_0000065" id="Bias" name="Bias" units="dimensionless" constant="false"/>
+    <parameter metaid="metaid_0000077" id="asp_pulse" value="0.01" units="uM"/>
+  </listOfParameters>
+  <listOfRules>
+    <assignmentRule metaid="metaid_0000064" variable="Bias">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <divide/>
+          <apply>
+            <plus/>
+            <ci> M </ci>
+            <ci> MYp </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> M </ci>
+            <ci> MYp </ci>
+            <ci> MYpYp </ci>
+            <ci> MYpYpYp </ci>
+            <ci> MYpYpYpYp </ci>
+          </apply>
+        </apply>
+      </math>
+    </assignmentRule>
+    <assignmentRule metaid="metaid_0000066" variable="asp">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <piecewise>
+          <piece>
+            <ci> asp_pulse </ci>
+            <apply>
+              <and/>
+              <apply>
+                <gt/>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                <cn type="integer"> 5 </cn>
+              </apply>
+              <apply>
+                <lt/>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                <cn type="integer"> 10 </cn>
+              </apply>
+            </apply>
+          </piece>
+          <otherwise>
+            <cn type="integer"> 0 </cn>
+          </otherwise>
+        </piecewise>
+      </math>
+    </assignmentRule>
+  </listOfRules>
+  <listOfReactions>
+    <reaction metaid="metaid_0000033" id="phosphorylation_r1" name="phosphorylation_r1" reversible="false">
+      <listOfReactants>
+        <speciesReference species="A"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Ap"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <ci> k1 </ci>
+            <ci> A </ci>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.001" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000034" id="phosphorylation_r2" name="phosphorylation_r2" reversible="false">
+      <listOfReactants>
+        <speciesReference species="TWA"/>
+        <speciesReference species="A"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="TWA"/>
+        <speciesReference species="Ap"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <ci> k1 </ci>
+            <ci> TWA </ci>
+            <ci> A </ci>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.059" units="peruMpersec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000035" id="phosphorylation_r3" name="phosphorylation_r3" reversible="false">
+      <listOfReactants>
+        <speciesReference species="Tni_WA"/>
+        <speciesReference species="A"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tni_WA"/>
+        <speciesReference species="Ap"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <ci> k1 </ci>
+            <ci> Tni_WA </ci>
+            <ci> A </ci>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.2" units="peruMpersec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000036" id="phosphorylation_r4" name="phosphorylation_r4" reversible="false">
+      <listOfReactants>
+        <speciesReference species="Tasp_WA"/>
+        <speciesReference species="Yp"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tasp_WA"/>
+        <speciesReference species="Y"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <ci> k1 </ci>
+            <ci> Tasp_WA </ci>
+            <ci> Yp </ci>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="100" units="peruMpersec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000037" id="phosphorylation_r5" name="phosphorylation_r5" reversible="false">
+      <listOfReactants>
+        <speciesReference species="Ap"/>
+        <speciesReference species="Y"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="A"/>
+        <speciesReference species="Yp"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <ci> k1 </ci>
+            <ci> Ap </ci>
+            <ci> Y </ci>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.2" units="peruMpersec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000038" id="phosphorylation_r6" name="phosphorylation_r6" reversible="false">
+      <listOfReactants>
+        <speciesReference species="Y"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Yp"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <ci> k1 </ci>
+            <ci> Y </ci>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000039" id="phosphorylation_r7" name="phosphorylation_r7" reversible="false">
+      <listOfReactants>
+        <speciesReference species="Yp"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Y"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <ci> k1 </ci>
+            <ci> Yp </ci>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.037" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000040" id="phosphorylation_r8" name="phosphorylation_r8" reversible="false">
+      <listOfReactants>
+        <speciesReference species="Yp"/>
+        <speciesReference species="Z"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Y"/>
+        <speciesReference species="Z"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <ci> k1 </ci>
+            <ci> Yp </ci>
+            <ci> Z </ci>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.5" units="peruMpersec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000041" id="phosphorylation_r9" name="phosphorylation_r9" reversible="false">
+      <listOfReactants>
+        <speciesReference species="Ap"/>
+        <speciesReference species="B"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="A"/>
+        <speciesReference species="Bp"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <ci> k1 </ci>
+            <ci> Ap </ci>
+            <ci> B </ci>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="1" units="peruMpersec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000042" id="phosphorylation_r10" name="phosphorylation_r10" reversible="false">
+      <listOfReactants>
+        <speciesReference species="Bp"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="B"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <ci> k1 </ci>
+            <ci> Bp </ci>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000043" id="regulatory_r1" name="regulatory_r1">
+      <listOfReactants>
+        <speciesReference species="T"/>
+        <speciesReference species="asp"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tasp"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> T </ci>
+                <ci> asp </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> Tasp </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="1" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000044" id="regulatory_r2" name="regulatory_r2">
+      <listOfReactants>
+        <speciesReference species="T"/>
+        <speciesReference species="ni"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tni"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> T </ci>
+                <ci> ni </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> Tni </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.001" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000045" id="regulatory_r3" name="regulatory_r3">
+      <listOfReactants>
+        <speciesReference species="T"/>
+        <speciesReference species="W"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="TW"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> T </ci>
+                <ci> W </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> TW </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.1" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000046" id="regulatory_r4" name="regulatory_r4">
+      <listOfReactants>
+        <speciesReference species="T"/>
+        <speciesReference species="A"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="TA"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> T </ci>
+                <ci> A </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> TA </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.01" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000047" id="regulatory_r5" name="regulatory_r5">
+      <listOfReactants>
+        <speciesReference species="W"/>
+        <speciesReference species="A"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="WA"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> W </ci>
+                <ci> A </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> WA </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.1" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000048" id="regulatory_r6" name="regulatory_r6">
+      <listOfReactants>
+        <speciesReference species="TW"/>
+        <speciesReference species="A"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="TWA"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> TW </ci>
+                <ci> A </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> TWA </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.4" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000049" id="regulatory_r7" name="regulatory_r7">
+      <listOfReactants>
+        <speciesReference species="TA"/>
+        <speciesReference species="W"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="TWA"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> TA </ci>
+                <ci> W </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> TWA </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.4" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000050" id="regulatory_r8" name="regulatory_r8">
+      <listOfReactants>
+        <speciesReference species="T"/>
+        <speciesReference species="WA"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="TWA"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> T </ci>
+                <ci> WA </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> TWA </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.4" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000067" id="regulatory_r9" name="regulatory_r9">
+      <listOfReactants>
+        <speciesReference species="Tasp"/>
+        <speciesReference species="W"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tasp_W"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> Tasp </ci>
+                <ci> W </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> Tasp_W </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.1" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000068" id="regulatory_r10" name="regulatory_r10">
+      <listOfReactants>
+        <speciesReference species="Tasp"/>
+        <speciesReference species="A"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tasp_A"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> Tasp </ci>
+                <ci> A </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> Tasp_A </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.01" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000069" id="regulatory_r11" name="regulatory_r10">
+      <listOfReactants>
+        <speciesReference species="Tasp_W"/>
+        <speciesReference species="A"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tasp_WA"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> Tasp_W </ci>
+                <ci> A </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> Tasp_WA </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.4" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000070" id="regulatory_r12" name="regulatory_r12">
+      <listOfReactants>
+        <speciesReference species="Tasp_A"/>
+        <speciesReference species="W"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tasp_WA"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> Tasp_A </ci>
+                <ci> W </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> Tasp_WA </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.4" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000071" id="regulatory_r13" name="regulatory_r13">
+      <listOfReactants>
+        <speciesReference species="Tasp"/>
+        <speciesReference species="WA"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tasp_WA"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> Tasp </ci>
+                <ci> WA </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> Tasp_WA </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.4" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000072" id="regulatory_r14" name="regulatory_r14">
+      <listOfReactants>
+        <speciesReference species="Tni"/>
+        <speciesReference species="W"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tni_W"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> Tni </ci>
+                <ci> W </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> Tni_W </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.1" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000073" id="regulatory_r15" name="regulatory_r15">
+      <listOfReactants>
+        <speciesReference species="Tni"/>
+        <speciesReference species="A"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tni_A"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> Tni </ci>
+                <ci> A </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> Tni_A </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.01" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000074" id="regulatory_r16" name="regulatory_r16">
+      <listOfReactants>
+        <speciesReference species="Tni_W"/>
+        <speciesReference species="A"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tni_WA"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> Tni_W </ci>
+                <ci> A </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> Tni_WA </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.4" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000075" id="regulatory_r17" name="regulatory_r17">
+      <listOfReactants>
+        <speciesReference species="Tni_A"/>
+        <speciesReference species="W"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tni_WA"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> Tni_A </ci>
+                <ci> W </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> Tni_WA </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.4" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000076" id="regulatory_r18" name="regulatory_r18">
+      <listOfReactants>
+        <speciesReference species="Tni"/>
+        <speciesReference species="WA"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Tni_WA"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> cell </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> Tni </ci>
+                <ci> WA </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> Tni_WA </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+        <listOfParameters>
+          <parameter id="k1" value="0.4" units="peruMpersec"/>
+          <parameter id="k2" value="1" units="persec"/>
+        </listOfParameters>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000060" id="motor_r1" name="motor_r1" fast="true">
+      <listOfReactants>
+        <speciesReference species="M"/>
+        <speciesReference species="Yp"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="MYp"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> ka </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> M </ci>
+                <ci> Yp </ci>
+              </apply>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> kappa </ci>
+                  <cn type="integer"> 4 </cn>
+                </apply>
+                <ci> MYp </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000061" id="motor_r2" name="motor_r2" fast="true">
+      <listOfReactants>
+        <speciesReference species="MYp"/>
+        <speciesReference species="Yp"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="MYpYp"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> ka </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> MYp </ci>
+                <ci> Yp </ci>
+              </apply>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> alpha </ci>
+                    <ci> kappa </ci>
+                  </apply>
+                  <cn type="integer"> 3 </cn>
+                </apply>
+                <ci> MYpYp </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000062" id="motor_r3" name="motor_r3" fast="true">
+      <listOfReactants>
+        <speciesReference species="MYpYp"/>
+        <speciesReference species="Yp"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="MYpYpYp"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> ka </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> MYpYp </ci>
+                <ci> Yp </ci>
+              </apply>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 3 </cn>
+                    <ci> alpha </ci>
+                    <ci> alpha </ci>
+                    <ci> kappa </ci>
+                  </apply>
+                  <cn type="integer"> 2 </cn>
+                </apply>
+                <ci> MYpYpYp </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction metaid="metaid_0000063" id="motor_r4" name="motor_r4" fast="true">
+      <listOfReactants>
+        <speciesReference species="MYpYpYp"/>
+        <speciesReference species="Yp"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="MYpYpYpYp"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> ka </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> MYpYpYp </ci>
+                <ci> Yp </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn type="integer"> 4 </cn>
+                <ci> alpha </ci>
+                <ci> alpha </ci>
+                <ci> alpha </ci>
+                <ci> kappa </ci>
+                <ci> MYpYpYpYp </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+  </listOfReactions>
+</model>
+</sbml>

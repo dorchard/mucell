@@ -242,7 +242,9 @@ namespace MuCell.Model.SBML.Reader
 
                     switch (reader.NodeType)
                     {
-                        case XmlNodeType.Element:
+                    
+                        case XmlNodeType.Element: 
+                        
                             //if (reader.Prefix != String.Empty)
                             //{
                             //    // namespaced element not part of SBML
@@ -250,52 +252,59 @@ namespace MuCell.Model.SBML.Reader
                             //}
                             String elementName = reader.LocalName.ToLower();
 
-                            if (elementName == "annotation" &&
-                                reader.HasAttributes &&
-                                reader.MoveToAttribute("xmlns") &&
-                               (reader.Value == "http://example.com/MuCell/Reaction" ||
-                                reader.Value == "http://example.com/MuCell/Species"
-                                ))
-                            {
-                                // continue down, do not fall into else branch
-                            }
-                            else if (elementName == "notes" ||
-                                elementName == "annotation" ||
-                                reader.Prefix != String.Empty)
-                            {
-                                // not part of the SBML model
-                                this.skipNode = true;
-                                continue;
-                            }
+							// Deal with empty elements
+                        	if (reader.IsEmptyElement && reader.AttributeCount==0 && (elementName.Equals("listofreactants"))) {
+                        		System.Console.WriteLine(elementName+"skipping");
+                        	} else {
+                        
+	                            if (elementName == "annotation" &&
+	                                reader.HasAttributes &&
+	                                reader.MoveToAttribute("xmlns") &&
+	                               (reader.Value == "http://example.com/MuCell/Reaction" ||
+	                                reader.Value == "http://example.com/MuCell/Species"
+	                                ))
+	                            {
+	                                // continue down, do not fall into else branch
+	                            }
+	                            else if (elementName == "notes" ||
+	                                elementName == "annotation" ||
+	                                reader.Prefix != String.Empty)
+	                            {
+	                                // not part of the SBML model
+	                                this.skipNode = true;
+	                                continue;
+	                            }
+	                                                        
 
-                            Hashtable attributes = new Hashtable();
-                            if (reader.HasAttributes)
-                            {
-                                for (int i = 0; i < reader.AttributeCount; i++)
-                                {
-                                    reader.MoveToAttribute(i);
-                                    if (reader.Name == "xmlns" && elementName != "math"
-                                        && elementName != "sbml" && reader.Value != "http://example.com/MuCell/Reaction"
-                                        && reader.Value != "http://example.com/MuCell/Species")
-                                    {
-                                        // namespaced node/subtree not part of SBML...unless MathML
-                                        // todo: could be part of annotation
-                                        reader.MoveToElement();
-                                        reader.Skip();
-                                    }
-                                    if (reader.Name == "specie")
-                                    {
-                                        // horrible leftover from SBML Level 1
-                                        attributes.Add("species", reader.Value);
-                                    }
-                                    else
-                                    {
-                                        attributes.Add(reader.Name.ToLower(), reader.Value);
-                                    }
-                                }
-                            } 
-                            StartElement(elementName, attributes);
-                            break;
+	                            Hashtable attributes = new Hashtable();
+	                            if (reader.HasAttributes)
+	                            {
+	                                for (int i = 0; i < reader.AttributeCount; i++)
+	                                {
+	                                    reader.MoveToAttribute(i);
+	                                    if (reader.Name == "xmlns" && elementName != "math"
+	                                        && elementName != "sbml" && reader.Value != "http://example.com/MuCell/Reaction"
+	                                        && reader.Value != "http://example.com/MuCell/Species")
+	                                    {
+	                                        // namespaced node/subtree not part of SBML...unless MathML
+	                                        // todo: could be part of annotation
+	                                        reader.MoveToElement();
+	                                        reader.Skip();
+	                                    }
+	                                    if (reader.Name == "specie")
+	                                    {
+	                                        // horrible leftover from SBML Level 1
+	                                        attributes.Add("species", reader.Value);
+	                                    }
+	                                    else
+	                                    {
+	                                        attributes.Add(reader.Name.ToLower(), reader.Value);
+	                                    }
+	                                }
+	                            } 
+	                            StartElement(elementName, attributes);
+	                        }
+	                        break;
 
                         case XmlNodeType.EndElement:
                             elementName = reader.LocalName.ToLower();

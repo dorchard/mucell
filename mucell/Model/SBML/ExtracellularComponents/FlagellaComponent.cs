@@ -113,18 +113,23 @@ namespace MuCell.Model.SBML.ExtracellularComponents
 				//System.Console.WriteLine("twiddling "+cell.GroupID);
 
                 //end of tumble
-                if (flage.TumbleCounter > tumbleDuration)
+                if (flage.TumbleCounter < tumbleDuration)
                 {
                 	System.Random random = cell.GetRandomObject();
                     cell.CellInstanceSpatialContext.Reorientate(new Vector3((float)(random.NextDouble() * 2 - 1),
                                                              (float)(random.NextDouble() * 2 - 1),
                                                              (float)(random.NextDouble() * 2 - 1)));
              
-                    flage.TumbleState = false;
+                    
                     //up to 50% variance in next tumble duration
-                    flage.TumbleCounter = 0.0f + tumbleDuration*0.5f*(float)random.NextDouble();
+                    
                     //System.Console.WriteLine("tc - group = "+cell.GroupID+" Tc = "+flage.TumbleCounter.ToString());
 
+                } else {
+                	System.Random random = cell.GetRandomObject();
+                	flage.TumbleCounter = 0.0f + tumbleDuration*0.5f*(float)random.NextDouble();
+                	flage.TumbleState = false;
+                
                 }
 
               
@@ -139,9 +144,10 @@ namespace MuCell.Model.SBML.ExtracellularComponents
 
                 flage.TumbleUpdateCounter += (float)timeStep;
 
-                //Randomly decide whether or not to tumble according to some likelihood
+                
                 if (flage.TumbleUpdateCounter > 1.0f / TumbleUpdateFrequency)
                 {
+                	//Randomly decide whether or not to tumble according to some likelihood
                 	float val = flage.TumbleLikelihood - (float)cell.GetRandomObject().NextDouble();
                 	//System.Console.WriteLine("cell - group = "+cell.GroupID+" val = "+val.ToString());
                     if (val > 0)
@@ -160,7 +166,7 @@ namespace MuCell.Model.SBML.ExtracellularComponents
                     cell.CellInstanceSpatialContext.Orientation.z * motiveStength * (float)timeStep));
 
 				// Adjust likelihood of twiddle based on chemical value
-                if (valueFromCircuit > 1.0f)
+                if (valueFromCircuit >= 1.0f)
                 {
                     flage.TumbleLikelihood = 0.90f;
                 }

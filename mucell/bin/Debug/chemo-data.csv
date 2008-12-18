@@ -3,7 +3,6 @@
 "Time Series 8 = CellDef_3.Attractant (Concentration)",,,,"Time Series 3 = CellDef_3.runTime (Cells)",,,,,,
 "Time Series 9 = CellDef_4.Attractant (Concentration)",,,,"Time Series 4 = CellDef_4.runTime (Cells)",,,,,,
 "Time Series 10 = CellDef_5.Attractant (Concentration)",,,,"Time Series 5 = CellDef_5.runTime (Cells)",,,,,,
-,,,,,,,,,,
 "Time","Time Series 6","Time Series 7","Time Series 8","Time Series9","Time Series 10","Time Series 1","Time Series 2","Time Series 3","Time Series 4","Time Series 5"
 0,0.19,0.32,0.21,0.24,0.26,0,0,0,0,0
 0.02,0.19,0.32,0.21,0.24,0.26,0,0,0,0,0

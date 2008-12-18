@@ -178,7 +178,6 @@ namespace MuCell.Model
                 cell.InitializeCellModel(this.parameters.SolverMethod, this.parameters);
                 // set the random object in the cell seeded by the simulations random object
                 int random = this.randomObject.Next();
-                System.Console.WriteLine("Generating new random with seed - "+random.ToString());
                 cell.SetRandomObject(new Random(this.randomObject.Next(random)));
             }
 

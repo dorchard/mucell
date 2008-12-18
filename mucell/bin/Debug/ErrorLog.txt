@@ -3,43 +3,34 @@ Attempting to set group by index: -1
 Attempting to set group by index: -1
 Attempting to set group by index: -1
 Attempting to set group by index: -1
-Attempting to set group by index: -1
-Attempting to set group by index: -1
-Attempting to set group by index: -1
-Attempting to set group by index: -1
+Checking missing nutrient fields for this celldef: 
+Attempting to set group by index: 0
+Success
+Attempting to set group by index: 0
+Success
+Checking missing nutrient fields for this celldef: 
+Here's a component in the list
+Attempting to set group by index: 0
+Success
+Attempting to set group by index: 0
+Success
+Checking missing nutrient fields for this celldef: 
+Here's a component in the list
+Here's a component in the list
+Missing : attractant
 SELECTED INDEX: 
 SELECTED INDEX: 
-Checking missing nutrient fields for this celldef: 
-Here's a component in the list
-Here's a component in the list
-Missing : attractant
-Checking missing nutrient fields for this celldef: 
-Here's a component in the list
-Missing : attractant
-Here's a component in the list
-Checking missing nutrient fields for this celldef: 
-Here's a component in the list
-Here's a component in the list
-Missing : attractant
-Checking missing nutrient fields for this celldef: 
-Here's a component in the list
-Missing : attractant
-Here's a component in the list
-Checking missing nutrient fields for this celldef: 
-Here's a component in the list
-Missing : attractant
-Here's a component in the list
-bounds x: 80 y: 80 z: 80
-bounds x: 80 y: 80 z: 80
 bounds x: 80 y: 80 z: 80
 Checking missing nutrient fields for this celldef: 
 Here's a component in the list
-Missing : attractant
-Here's a component in the list
-Checking missing nutrient fields for this celldef: 
-Here's a component in the list
 Here's a component in the list
 Missing : attractant
-Attempting to set group by index: 4
+bounds x: 80 y: 80 z: 80
+bounds x: 80 y: 80 z: 80
+Attempting to set group by index: 1
+Success
+Attempting to set group by index: 1
 Success
 bounds x: 80 y: 80 z: 80
+Attempting to set group by index: 1
+Success
