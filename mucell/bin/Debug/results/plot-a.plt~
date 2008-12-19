@@ -1,0 +1,5 @@
+set xlabel 'Time'
+set ylabel 'Concentration (moles)'
+set title 'Average concentration of attractant in cells during chemotaxis'
+set grid
+plot 'rm.csv' using 1:2 with lines
