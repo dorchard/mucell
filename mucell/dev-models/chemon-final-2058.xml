@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sbml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" level="2" version="3" xmlns="http://www.sbml.org/sbml/level2">
+  <model id="muCell Default">
+    <listOfCompartments>
+      <compartment id="compartment" spatialDimensions="3" size="1" constant="true" />
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="CheA" initialAmount="1000" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="224.2338" />
+          <yPosition value="98.23492" />
+        </annotation>
+      </species>
+      <species id="CheAp" initialAmount="1" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="228.1431" />
+          <yPosition value="232.2334" />
+        </annotation>
+      </species>
+      <species id="Attractant" initialAmount="1" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="137.6195" />
+          <yPosition value="88.59685" />
+        </annotation>
+      </species>
+      <species id="CheB" initialAmount="1" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="116.016" />
+          <yPosition value="332.8931" />
+        </annotation>
+      </species>
+      <species id="CheBp" initialAmount="1" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="94.093" />
+          <yPosition value="203.0781" />
+        </annotation>
+      </species>
+      <species id="CheY" initialAmount="100" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="283.9815" />
+          <yPosition value="364.9209" />
+        </annotation>
+      </species>
+      <species id="Repellent" initialAmount="1" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="99.44423" />
+          <yPosition value="113.7149" />
+        </annotation>
+      </species>
+      <species id="CheYp" initialAmount="1" initialConcentration="-1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation xmlns="http://example.com/MuCell/Species">
+          <xPosition value="361.2466" />
+          <yPosition value="290.8115" />
+        </annotation>
+      </species>
+    </listOfSpecies>
+    <listOfParameters />
+    <listOfReactions>
+      <reaction id="R1" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="CheA" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CheAp" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Attractant" />
+          <modifierSpeciesReference species="CheBp" />
+          <modifierSpeciesReference species="Repellent" />
+        </listOfModifiers>
+        <kineticLaw formula="50*(Repellent+1)/(1+CheBp+Attractant*CheBp)">
+          <listOfParameters />
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="176.591" />
+          <yPosition value="159.6087" />
+        </annotation>
+      </reaction>
+      <reaction id="R2" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="CheAp" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CheA" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers />
+        <kineticLaw formula="50*CheAp">
+          <listOfParameters />
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="280.3738" />
+          <yPosition value="155.1016" />
+        </annotation>
+      </reaction>
+      <reaction id="R3" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="CheB" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CheBp" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CheAp" />
+        </listOfModifiers>
+        <kineticLaw formula="8*(CheAp-1)*CheB">
+          <listOfParameters />
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="154.9407" />
+          <yPosition value="257.514" />
+        </annotation>
+      </reaction>
+      <reaction id="R4" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="CheY" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CheYp" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CheAp" />
+        </listOfModifiers>
+        <kineticLaw formula="10*CheAp">
+          <listOfParameters />
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="279.7583" />
+          <yPosition value="287.1395" />
+        </annotation>
+      </reaction>
+      <reaction id="R5" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="CheYp" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CheY" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers />
+        <kineticLaw formula="10*CheYp">
+          <listOfParameters />
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="359.6797" />
+          <yPosition value="362.9437" />
+        </annotation>
+      </reaction>
+      <reaction id="R6" fast="false" reversible="false">
+        <listOfReactants>
+          <speciesReference species="CheBp" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CheB" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers />
+        <kineticLaw formula="CheBp">
+          <listOfParameters />
+        </kineticLaw>
+        <annotation xmlns="http://example.com/MuCell/Reaction">
+          <xPosition value="53" />
+          <yPosition value="278" />
+        </annotation>
+      </reaction>
+    </listOfReactions>
+    <listOfComponents />
+  </model>
+</sbml>

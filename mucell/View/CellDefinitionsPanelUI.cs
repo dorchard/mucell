@@ -200,7 +200,7 @@ namespace MuCell.View
             // trackBar1
             // 
             this.trackBar1.AutoSize = false;
-            this.trackBar1.BackColor = System.Drawing.SystemColors.Window;
+      
             this.trackBar1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trackBar1.Location = new System.Drawing.Point(46, 3);
             this.trackBar1.Name = "trackBar1";
@@ -310,7 +310,7 @@ namespace MuCell.View
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.22662F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 284F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 320F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 1);
@@ -370,7 +370,7 @@ namespace MuCell.View
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 21);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(278, 149);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(300, 149);
             this.flowLayoutPanel2.TabIndex = 18;
             // 
             // modifierLinkBtn

@@ -456,7 +456,11 @@ namespace MuCell.View.OpenGL
                         {
                             for (float j = jmin; j < jmax; j += res)
                             {
-                                float level = nutrient.GetNutrientLevelApprox(i, j, k) * spatialViewState.NutrientIntensityScale;
+                                float level = (0.55f * nutrient.GetNutrientLevelApprox(i, j, k) / spatialViewState.NutrientIntensityScale);
+                                if (level!=0){
+                                	// bump up if not 0
+                                	level+=0.2f;
+                                }
                                // float level = nutrient.GetNutrientLevel(i, j, k);
 
                                 if (level > 1.0f) level = 1.0f;

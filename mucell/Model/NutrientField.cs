@@ -1,12 +1,13 @@
 using System;
+using System.IO;
 using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Text;
-
+ 
 namespace MuCell.Model
 {
     public enum InitialNutrientDistribution { UniformThroughout = 0, UniformSphere, DenselyCentredSphere};
-
+ 
     /// <summary>
     /// A class responsible for managing the Nutrient Field data structure
     /// </summary>
@@ -15,17 +16,17 @@ namespace MuCell.Model
         //maximum concentrations of this nutrient in any unit volume in the environment
         private float maxPerUnit;
         private float minPerUnit;
-
+ 
         //whether or not the this nutrient field has yet been loaded
         private Boolean fieldLoaded;
-        [XmlAttribute]
+[XmlAttribute]
         public Boolean FieldLoaded
         {
             get { return fieldLoaded; }
             set { fieldLoaded = value; }
         }
-
-
+ 
+ 
         //the width, height and depth of the field array respectively
         private int[] dim;
         public int[] Dim
@@ -33,14 +34,14 @@ namespace MuCell.Model
             get { return dim; }
             set { dim = value; }
         }
-
-
-
-        /* The concentration field. field[0,0,0] represents a cube of 
-         * size (1 / resolution)^3 with a world cooridnate centre of (0,0,0)
-         *  
-         * 
-         */
+ 
+ 
+ 
+        /* The concentration field. field[0,0,0] represents a cube of
+* size (1 / resolution)^3 with a world cooridnate centre of (0,0,0)
+*
+*
+*/
         private float[][][] field;
         public float[][][] Field
         {
@@ -48,106 +49,106 @@ namespace MuCell.Model
             set { field = value; }
             
         }
-
-
+ 
+ 
         //the ID (index) of this group in the environment
         private int index;
-        [XmlAttribute]
+[XmlAttribute]
         public int Index
         {
             get { return index; }
             set { index = value; }
         }
-
-
+ 
+ 
         //The name of this nutrient field
         private String name;
-        [XmlAttribute]
+[XmlAttribute]
         public String Name
         {
             get { return name; }
             set { name = value; }
         }
-
-
-
+ 
+ 
+ 
         //The source position of the nutrient in the environment
         public Vector3 InitialPosition;
-
-
+ 
+ 
         /// <summary>
         /// How to colour the nutrient field (tinting)
         /// </summary>
         private System.Drawing.Color col;
-        [XmlIgnore]
+[XmlIgnore]
         public System.Drawing.Color Col
         {
             get { return col; }
             set { col = value; }
         }
-
-        [XmlAttribute]
+ 
+[XmlAttribute]
         public String Colour
         {
             get { return this.col.ToString(); }
             set { this.col = System.Drawing.Color.FromName(value); }
         }
-
+ 
         /// <summary>
         /// How do initally distribute the nutrients in the env
         /// </summary>
         private InitialNutrientDistribution initialDistribution;
-        [XmlAttribute]
+[XmlAttribute]
         public InitialNutrientDistribution InitialDistribution
         {
             get { return initialDistribution; }
             set { initialDistribution = value; }
         }
-
+ 
         /// <summary>
         /// Quantity of the nutrient to add to the environment initally
         /// </summary>
         private float initialQuantity;
-        [XmlAttribute]
+[XmlAttribute]
         public float InitialQuantity
         {
             get { return initialQuantity; }
             set { initialQuantity = value; }
         }
-
+ 
         /// <summary>
         /// Radius of the sphere where to initally distribute the nutrients
         /// </summary>
         private float initialRadius;
-        [XmlAttribute]
+[XmlAttribute]
         public float InitialRadius
         {
             get { return initialRadius; }
             set { initialRadius = value; }
         }
-
+ 
         /// <summary>
         /// Rate at which this nutrient diffuses within the env
         /// </summary>
         private float diffusionRate;
-        [XmlAttribute]
+[XmlAttribute]
         public float DiffusionRate
         {
             get { return diffusionRate; }
             set { diffusionRate = value; }
         }
-
+ 
         /// <summary>
         /// Data points per unit of the boundary
         /// </summary>
         private float resolution;
-        [XmlAttribute]
+[XmlAttribute]
         public float Resolution
         {
             get { return resolution; }
             set { resolution = value; }
         }
-
+ 
         //offset of the world coord system
         private Vector3 worldOffset;
         public Vector3 WorldOffset
@@ -155,44 +156,44 @@ namespace MuCell.Model
             get { return worldOffset; }
             set { worldOffset = value; }
         }
-
-
+ 
+ 
         /*
-         * Note: cube dimesions are stored instead of derived directly because
-         * they need to be accessed frequently during diffusion calculations
-         */
-
-
+* Note: cube dimesions are stored instead of derived directly because
+* they need to be accessed frequently during diffusion calculations
+*/
+ 
+ 
         //volume of a single cube in the field array
         private float cubeVolume;
-        [XmlAttribute]
+[XmlAttribute]
         public float CubeVolume
         {
             get { return cubeVolume; }
             set { cubeVolume = value; }
         }
-
+ 
         //cross-sectional area of a single cube in the field array
         private float cubeArea;
-        [XmlAttribute]
+[XmlAttribute]
         public float CubeArea
         {
             get { return cubeArea; }
             set { cubeArea = value; }
         }
-
+ 
         //length of one of the sides of a single cube int he field array
         private float cubeLength;
-        [XmlAttribute]
+[XmlAttribute]
         public float CubeLength
         {
             get { return cubeLength; }
             set { cubeLength = value; }
         }
-
-
-
-
+ 
+ 
+ 
+ 
         /// <summary>
         /// Clones a NutrientField
         /// </summary>
@@ -215,10 +216,10 @@ namespace MuCell.Model
             newInstance.Name = this.name;
             newInstance.Resolution = this.resolution;
             newInstance.WorldOffset = this.worldOffset;
-
+ 
             return newInstance;
         }
-
+ 
         /// <summary>
         /// Basic constructor.
         /// </summary>
@@ -236,17 +237,17 @@ namespace MuCell.Model
             this.resolution = 0.25f;
             this.dim = new int[3];
             this.dim[0] = this.dim[1] = this.dim[2] = 1;
-
+ 
             this.field = new float[1][][];
             this.field[0] = new float[1][];
             this.field[0][0] = new float[1];
-
+ 
             //this.field = new float[1, 1, 1];
-
+ 
             this.cubeArea = 1.0f;
             this.cubeLength = 1.0f;
             this.cubeVolume = 1.0f;
-
+ 
             this.col = System.Drawing.Color.CornflowerBlue;
         }
         public NutrientField()
@@ -255,7 +256,7 @@ namespace MuCell.Model
             this.minPerUnit = 0.0f;
             this.index = index;
             this.name = "nutrientloaded";
-
+ 
             this.initialDistribution = InitialNutrientDistribution.UniformThroughout;
             this.initialRadius = 30f;
             this.diffusionRate = 1f;
@@ -263,20 +264,20 @@ namespace MuCell.Model
             this.resolution = 0.25f;
             this.dim = new int[3];
             this.dim[0] = this.dim[1] = this.dim[2] = 1;
-
+ 
             this.field = new float[1][][];
             this.field[0] = new float[1][];
             this.field[0][0] = new float[1];
-
+ 
             //this.field = new float[1, 1, 1];
-
+ 
             this.cubeArea = 1.0f;
             this.cubeLength = 1.0f;
             this.cubeVolume = 1.0f;
-
+ 
             this.col = System.Drawing.Color.CornflowerBlue;
         }
-
+ 
         /// <summary>
         /// Converts from field coordinates to world coordinates
         /// </summary>
@@ -287,19 +288,19 @@ namespace MuCell.Model
         public Vector3 FieldToWorldCoord(float i, float j, float k)
         {
             Vector3 v;
-
+ 
             
-
-            v.x = i / resolution + worldOffset.x;
-            v.y = j / resolution + worldOffset.y;
-            v.z = k / resolution + worldOffset.z;
-
+ 
+            v.x = (i+0.5f) / resolution + worldOffset.x;
+            v.y = (j+0.5f) / resolution + worldOffset.y;
+            v.z = (k+0.5f) / resolution + worldOffset.z;
+ 
             return v;
-
+ 
         }
-
-
-
+ 
+ 
+ 
         /// <summary>
         /// Returns the approxiamte nutrient level at a specific location, suitable
         /// for graphical output, but not for simulation purposes
@@ -314,19 +315,19 @@ namespace MuCell.Model
             int i = (int)((x - worldOffset.x) * resolution);
             int j = (int)((y - worldOffset.y) * resolution);
             int k = (int)((z - worldOffset.z) * resolution);
-
-
+ 
+ 
             if (i < 0 || i >= this.dim[0] ||
                 j < 0 || j >= this.dim[1] ||
                 k < 0 || k >= this.dim[2])
             {
                 return 0;
             }
-
-            return field[i][j][k] / this.cubeVolume;
-
+ 
+            return field[i][j][k];// / this.cubeVolume;
+ 
         }
-
+ 
         /// <summary>
         /// Returns the nutrient level at a specific location
         /// </summary>
@@ -334,12 +335,12 @@ namespace MuCell.Model
         public float GetNutrientLevel(Vector3 pos)
         {
             return GetNutrientLevel(pos.x, pos.y, pos.z);
-
+ 
         }
-
-
+ 
+ 
         /// <summary>
-        /// Returns the nutrient level at a particular point in 
+        /// Returns the nutrient level at a particular point in
         /// moles per litre.
         /// </summary>
         /// <param name="x"></param>
@@ -348,54 +349,54 @@ namespace MuCell.Model
         /// <returns></returns>
         public float GetNutrientLevel(float x,float y, float z)
         {
-
-
-
+ 
+ 
+ 
             //which cube the given point falls into
             int midx = (int)((x - worldOffset.x )*resolution);
             int midy = (int)((y - worldOffset.y) * resolution);
             int midz = (int)((z - worldOffset.z) * resolution);
-
+ 
             /*
-             * Concentration is computed using a gaussian-style function:
-             * A weighted average of all concentrations of the 3x3 points surrounding
-             * the given point is computed. 
-             * 
-             */
-
+* Concentration is computed using a gaussian-style function:
+* A weighted average of all concentrations of the 3x3 points surrounding
+* the given point is computed.
+*
+*/
+ 
             //Need to first compute the total sum of coefficients so that weighting can be scaled to sum to 1
             float sumOfExp = 0;
             float val = 0;
             Vector3 pos;
-
+ 
           
             for (int m = 0; m < 2; m++)
             {
-
-
+ 
+ 
                 for (int i = midx - 2; i <= midx + 2; i++)
                 {
                     for (int j = midy - 2; j <= midy + 2; j++)
                     {
                         for (int k = midz - 2; k <= midz + 2; k++)
                         {
-
+ 
         
                             if (i < 0 || i >= this.dim[0] ||
                                 j < 0 || j >= this.dim[1] ||
                                 k < 0 || k >= this.dim[2])
                             {
                                 //out of bounds
-
+ 
                             }
                             else
                             {
-
+ 
                                 pos = FieldToWorldCoord((float)i, (float)j, (float)k);
                                 pos.x -= x;
                                 pos.y -= y;
                                 pos.z -= z;
-
+ 
                                 float dist = pos.magnitude();
                                 float exp = (float)Math.Pow(2, -5 * dist *resolution);
                 
@@ -405,37 +406,37 @@ namespace MuCell.Model
                                     sumOfExp += exp;
                                 }
                                 else
-                                {   
+                                {
                                     //where exp/sumOfExp is the weighting coefficient
-                                    val +=  (exp/sumOfExp) *  (field[i][j][k] / this.cubeVolume );
+                                    val += (exp/sumOfExp) * (field[i][j][k]); // / this.cubeVolume );
                                 }
-
+ 
                             }
-
+ 
                         } //end of loop k
                     } //end of loop j
                 } //end of loop i
-
-
+ 
+ 
             } //end of loop m
-
+ 
          
             return val;
-
-
+ 
+ 
         }
-
-
+ 
+ 
         /// <summary>
-        /// Computes the dimensions of the field array, loads it into memory, 
+        /// Computes the dimensions of the field array, loads it into memory,
         /// and sets initial values;
         /// </summary>
         public void InitField(Boundary bounds)
         {
             TestRigs.ErrorLog.LogError("bounds x: " + bounds.Width + " y: " + bounds.Height + " z: " + bounds.Depth);
-
+ 
             UpdateDimensions(bounds);
-
+ 
             this.field = new float[dim[0]][][];
             for (int i = 0; i < this.field.Length; i++)
             {
@@ -446,8 +447,8 @@ namespace MuCell.Model
                 }
             }
             //this.field = new float[dim[0], dim[1], dim[2]];
-
-
+ 
+ 
             //init all values to 0
             for (int i = 0; i < dim[0]; i++)
             {
@@ -462,29 +463,29 @@ namespace MuCell.Model
                     }
                 }
             }
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
             switch (initialDistribution)
             {
                 case InitialNutrientDistribution.UniformThroughout:
                     {
-
+ 
                         /*
-                         * Uniformly distribute the nutrient in the environment
-                         * by counting the number of cubes inside the env, and then
-                         * adding an equal fraction of nutrients to each of these 
-                         * field cubes. 
-                         */
-
+* Uniformly distribute the nutrient in the environment
+* by counting the number of cubes inside the env, and then
+* adding an equal fraction of nutrients to each of these
+* field cubes.
+*/
+ 
                         int cubesInside = 0;
-
+ 
                         for (int m = 0; m < 2; m++)
                         {
-
-
+ 
+ 
                             //m=0 : begin by counting how many field cubes are inside the boundary
                             //m=1 : Distribute evenly amongst all cubes inside the boundary
                             for (int i = 0; i < dim[0]; i++)
@@ -501,8 +502,8 @@ namespace MuCell.Model
                                             }
                                             else
                                             {
-
-                                                field[i][j][k] =  InitialQuantity / cubesInside;
+ 
+                                                field[i][j][k] = InitialQuantity / cubesInside;
                                    
                                             }
                                         }
@@ -510,32 +511,32 @@ namespace MuCell.Model
                                 }
                             }
                         }
-
+ 
                 
                         break;
                     }
                 case InitialNutrientDistribution.DenselyCentredSphere:
                     {
-
+ 
                         Boundary innerSphere = new Boundary();
                         innerSphere.Radius = this.InitialRadius;
                         innerSphere.Shape = BoundaryShapes.Sphere;
-
-                        /* 
-                         * Here we use a similar techique, however the quantity
-                         * to be added dreases exponentially with the distance 
-                         * from the centre of the sphere. We need to first calculate
-                         * the sum of these exponentials so that we know the scaling
-                         * factor for the final values. By doing this we ensure that
-                         * exactly the correct quantity of nutrients is added.
-                         */
+ 
+                        /*
+* Here we use a similar techique, however the quantity
+* to be added dreases exponentially with the distance
+* from the centre of the sphere. We need to first calculate
+* the sum of these exponentials so that we know the scaling
+* factor for the final values. By doing this we ensure that
+* exactly the correct quantity of nutrients is added.
+*/
                         float sumOfExp = 0;
-
+ 
                         for (int m = 0; m < 2; m++)
                         {
-
-
-
+ 
+ 
+ 
                             for (int i = 0; i < dim[0]; i++)
                             {
                                 for (int j = 0; j < dim[1]; j++)
@@ -549,54 +550,58 @@ namespace MuCell.Model
                                             pos.x -= this.InitialPosition.x;
                                             pos.y -= this.InitialPosition.y;
                                             pos.z -= this.InitialPosition.z;
-
+ 
                                             if (innerSphere.InsideBoundary(pos))
                                             {
-                                                float dist = pos.magnitude();
+                                            
+                                            	float dist = pos.magnitude();
+                                            	//float exp = (float)Math.Pow(2, -4 * dist / this.InitialRadius);
+                                            	float exp = (float)Math.Pow(Math.E, -(Math.Pow(dist, 2.0f)) / (2.0f * Math.Pow(this.initialRadius/3.0, 2)));
+                                                
                                                 if (m == 0)
                                                 {
-
+ 
                                                     //begin by summing total distances from each point to the centre of the sphere
-                                                    sumOfExp += (float)Math.Pow(2, -4 * dist / this.InitialRadius);
+                                                    sumOfExp += exp;
                                                 }
                                                 else
                                                 {
                                                     //once counted, distribute evenly
-                                                    field[i][j][k] = InitialQuantity * (float)Math.Pow(2, -4 * dist / this.InitialRadius) / sumOfExp;
+                                                    field[i][j][k] = InitialQuantity * exp / sumOfExp;
                                                 }
                                             }
-
+ 
                                         }
                                     }
                                 }
                             }
                         }
                     }
-
-
+ 
+ 
                     break;
-
-
-
+ 
+ 
+ 
                 /*
-                 * Nutrient quantity is evenly distrubted in a sphere, again
-                 * we use multiple passes to ensure that exactly the correct
-                 * quantity is added
-                 */
+* Nutrient quantity is evenly distrubted in a sphere, again
+* we use multiple passes to ensure that exactly the correct
+* quantity is added
+*/
                 case InitialNutrientDistribution.UniformSphere:
                     {
-
+ 
                         Boundary innerSphere = new Boundary();
                         innerSphere.Radius = this.InitialRadius;
                         innerSphere.Shape = BoundaryShapes.Sphere;
-
-
+ 
+ 
                         int cubesInside = 0;
-
+ 
                         for (int m = 0; m < 2; m++)
                         {
-
-
+ 
+ 
                             
                             for (int i = 0; i < dim[0]; i++)
                             {
@@ -611,19 +616,19 @@ namespace MuCell.Model
                                             pos.x -= this.InitialPosition.x;
                                             pos.y -= this.InitialPosition.y;
                                             pos.z -= this.InitialPosition.z;
-
+ 
                                             //test that location is inside desired sphere
                                             if (innerSphere.InsideBoundary(pos))
                                             {
                                                 if (m == 0)
-                                                {   
+                                                {
                                                     //begin by counting how many field cubes are inside the boundary and sphere
                                                     cubesInside++;
                                                 }
                                                 else
                                                 {
                                                     //once counted, distribute evenly
-                                                    field[i][j][k] =  InitialQuantity / cubesInside;
+                                                    field[i][j][k] = InitialQuantity / cubesInside;
                                                 }
                                             }
                                         }
@@ -631,21 +636,21 @@ namespace MuCell.Model
                                 }
                             }
                         }
-
+ 
                         break;
                     }
             }
-
-
+ 
+ 
             this.fieldLoaded = true;
-
+ 
         }
-
-
+ 
+ 
         /*
-         * Estimates the value by which to scale the alpha value
-         * of the polygons when drawing this nutrient field 
-         */ 
+* Estimates the value by which to scale the alpha value
+* of the polygons when drawing this nutrient field
+*/
         public float EstimateIntensityScale()
         {
             if (!this.FieldLoaded)
@@ -653,8 +658,9 @@ namespace MuCell.Model
                 return 0;
             }
 
-            float totalVal = 0;
-            int cnt = 0;
+            //float totalVal = 0;
+            float maximum = 0;
+           // int cnt = 0;
 
             for (int i = 0; i < dim[0]; i++)
             {
@@ -663,24 +669,25 @@ namespace MuCell.Model
                     for (int k = 0; k < dim[2]; k++)
                     {
 
-                        if (field[i][j][k] != 0)
-                        {
-                            totalVal += field[i][j][k] / this.cubeVolume;
-                            cnt++;
-                        }
+                        //if (field[i][j][k] != 0)
+                        //{
+                        	if (field[i][j][k]>maximum) {
+                        		maximum = field[i][j][k];
+                        	}
+                            //totalVal += field[i][j][k];// / this.cubeVolume;
+                            //cnt++;
+                        //}
 
 
                     }
                 }
-            }
-
-
-            return 0.4f / ((totalVal / (float)cnt));
-
-
+            }
+			return (float)maximum;
+			// old
+            //return 0.4 / ((totalVal / (float)cnt));
         }
-
-
+ 
+ 
         /// <summary>
         /// Diffuses nutrients from cube (x1,y1,z1) to (x2,y2,z2)
         /// </summary>
@@ -696,30 +703,25 @@ namespace MuCell.Model
             if (x1 < 0 || y1 < 0 || z1 < 0 || x2 < 0 || y2 < 0 || z2 < 0 ||
                 x1 >= dim[0] || y1 >= dim[1] || z1 >= dim[2] ||
                 x2 >= dim[0] || y2 >= dim[1] || z2 >= dim[2] ||
-                (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)+(z1 - z2) * (z1 - z2) != 1   //points are not exactly a distance 1 apart
+                (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)+(z1 - z2) * (z1 - z2) != 1 //points are not exactly a distance 1 apart
                 )
             {
                 return;
             }
-
-
+ 
+ 
             //Calculate gradient, and diffuse nutrients accordingly
             float valA = field[x1][y1][z1];
             float valB = field[x2][y2][z2];
-
-            float delta = timeStep*50*(valB - valA) * cubeArea * diffusionRate;
-
+ 
+            float delta = timeStep*50*(valB - valA) * cubeArea * (diffusionRate/10.0f);
+ 
             field[x1][y1][z1] += delta;
             field[x2][y2][z2] -= delta;
-
-
         }
 
-
-
-
         /// <summary>
-        /// For each cube, diffuse to 9 neighbors. Boundary conditions 
+        /// For each cube, diffuse to 9 neighbors. Boundary conditions
         /// are checked within the diffusion method.
         /// </summary>
         /// <param name="time"></param>
@@ -731,20 +733,16 @@ namespace MuCell.Model
                 return;
             }
             float tim = (float)timeStep;
-
-
+ 
+ 
             //for every field cube, compute diffision to the 8 adj cubes
-
+ 
             for (int i = 0; i < dim[0]; i++)
             {
                 for (int j = 0; j < dim[1]; j++)
                 {
                     for (int k = 0; k < dim[2]; k++)
-                    {
-
-
-
-
+                    { 
                         for (int p = -1; p <= 1; p++)
                         {
                             for (int q = -1; q <= 1; q++)
@@ -753,69 +751,120 @@ namespace MuCell.Model
                                 {
                                     diffuse(i, j, k,
                                             i + p, j + q, k + r, tim);
-
+ 
                                 }
                             }
                         }
-
-
-
+ 
+ 
+ 
                     }
                 }
-            }
-
-
-
-
+            } 
         }
 
-
-
-
-
+ 
         /// <summary>
         /// Given the boundary, computes the dimensions of the field array
         /// at its current resolution
         /// </summary>
         /// <param name="bounds"></param>
+        /// There are several assumptions which are NOT enforce in this code but should be
+        /// Width==Height==Depth i.e. the boundary must be an orthotope not a polytope (cube not rectoid)
+        /// because the approximation uses uniform cubes, therefore environment must be a cube OR a cube is approximated over it
+        /// This is the semantic restriction for these algorithms but is not currently enforced
+        /// TODO: 
+       	///			a). Enforce cube structure/approximate a cube that spans over something that is not a cube
+       	///			b). Rewrite how he select the dimensions so that we can pack cubes into any sized area
+       	/// Note use of the word "cuboid" is misleading in the BoundarShapes, cuboids can be rectoids.
+       	/// BoundarShapes.Sphere is currently *fine* as ellipsoids can not exist in muCell
         public void UpdateDimensions(Boundary bounds)
        {
             
             switch (bounds.Shape)
             {
                 case BoundaryShapes.Cuboid:
-                    this.dim[0] = 1 + (int)Math.Ceiling(bounds.Width * this.resolution);
-                    this.dim[1] = 1 + (int)Math.Ceiling(bounds.Height * this.resolution);
-                    this.dim[2] = 1 + (int)Math.Ceiling(bounds.Depth * this.resolution);
-                    this.worldOffset.x = -bounds.Width / 2;
-                    this.worldOffset.y = -bounds.Height / 2;
-                    this.worldOffset.z = -bounds.Depth / 2;
+                    this.dim[0] = (int)Math.Ceiling(bounds.Width * this.resolution);
+                    this.dim[1] = (int)Math.Ceiling(bounds.Height * this.resolution);
+                    this.dim[2] = (int)Math.Ceiling(bounds.Depth * this.resolution);
+                    this.worldOffset.x = -bounds.Width / 2.0f;
+                    this.worldOffset.y = -bounds.Height / 2.0f;
+                    this.worldOffset.z = -bounds.Depth / 2.0f;
                     break;
-
+ 
                 case BoundaryShapes.Cylinder:
-                    this.dim[0] =  this.dim[2] = 1 + (int)Math.Ceiling(2*bounds.Radius * this.resolution);
-                    this.dim[1] = 1 + (int)Math.Ceiling(bounds.Height * this.resolution);
+                    this.dim[0] = this.dim[2] = (int)Math.Ceiling(2*bounds.Radius * this.resolution);
+                    this.dim[1] = (int)Math.Ceiling(bounds.Height * this.resolution);
                     this.worldOffset.x = this.worldOffset.z = -bounds.Radius;
                     this.worldOffset.y = -bounds.Height / 2;
                     break;
-
+ 
                 case BoundaryShapes.Sphere:
-                    this.dim[0] = this.dim[1] = this.dim[2] = 1 + (int)Math.Ceiling(2*bounds.Radius * this.resolution);
+                    this.dim[0] = this.dim[1] = this.dim[2] = (int)Math.Ceiling(2*bounds.Radius * this.resolution);
                     this.worldOffset.x = this.worldOffset.y = this.worldOffset.z = -bounds.Radius;
-                    
                     break;
             }
-
-
-            this.cubeVolume = (float)Math.Pow( 1.0f / (resolution*100) , 3.0f );
-            this.cubeArea = (float)Math.Pow(1.0f / (resolution * 100), 2.0f);
-            this.cubeLength = (float)1.0f / (resolution * 100);
-
+ 
+ 			// make odd
+ 			if ((dim[0]%2)==0) {
+ 				dim[0]+=1;
+ 			}
+ 			if ((dim[1]%2)==0) {
+ 				dim[1]+=1;
+ 			}
+ 			if ((dim[2]%2)==0) {
+ 				dim[2]+=1;
+ 			}
+ 			
+ 			
+ 			this.cubeLength = (float)1.0f / (dim[0]);
+ 			this.cubeArea = (float)Math.Pow(this.cubeLength, 2.0f);
+            this.cubeVolume = (float)Math.Pow(this.cubeLength, 3.0f);
+ 
             this.FieldLoaded = false;
         }
-
-
-
+ 
+         public void PrintCubes() {
+        
+        	string data = "";
+        	float sum = 0.0f;
+        
+        	for (int i = 0; i < this.dim[0]; i++) {
+        		for (int j = 0; j < this.dim[1]; j++) {
+        			for (int k = 0; k < this.dim[2]; k++) {
+        				data+=this.field[i][j][k]+"\t";
+        				sum+=this.field[i][j][k];
+        			}
+        			data+="\n";
+        		}
+        		data+="\n\n";
+        	}
+        	
+        	data+="\n\nSum ="+sum;
+        	data+="\nInterpolations\n\n";
+        	
+        	// test interpolation from center of cubes
+        	for (int i = 0; i < this.dim[0]; i++){
+        		for (int j = 0; j < this.dim[1]; j++){
+        			for (int k = 0; k < this.dim[2]; k++){
+        				float x = (float)(i+0.5)/this.resolution+this.worldOffset.x;
+        				float y = (float)(j+0.5)/this.resolution+this.worldOffset.y;
+        				float z = (float)(k+0.5)/this.resolution+this.worldOffset.z;
+        				data+=this.GetNutrientLevel(new Vector3(x, y, z))+"\t";
+        			}
+        			data+="\n";
+        		}
+        		data+="\n\n";
+        	}
+        	
+        	FileStream file = new FileStream("cubes.txt", FileMode.Create, FileAccess.Write);
+			StreamWriter sw = new StreamWriter(file);
+			sw.Write(data);
+			sw.Close();
+        	
+        }
+ 
+ 
         /// <summary>
         /// Estimates space consumption of this field in MB
         /// </summary>
@@ -825,8 +874,8 @@ namespace MuCell.Model
         {
             return (float)(dim[0] * dim[1] * dim[2] * 4) / 1048576;
         }
-
-
+ 
+ 
         /// <summary>
         /// Returns the concentration of this nutrient field at the given point in space
         /// </summary>
@@ -837,7 +886,7 @@ namespace MuCell.Model
             //return distance from the centre for the moment
             return point.magnitude();
         }
-
+ 
         /// <summary>
         /// Returns the name of this Nutrient Field
         /// </summary>
@@ -846,6 +895,7 @@ namespace MuCell.Model
         {
             return name;
         }
-
+ 
     }
 }
+ 

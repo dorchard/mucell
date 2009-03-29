@@ -239,6 +239,15 @@ namespace MuCell.Model
 
                 i++;
             }
+            
+            //DEBUG
+        	// before start print nutrient field information
+        	foreach (NutrientField field in this.currentState.SimulationEnvironment.GetNutrientObjects()) {
+        		System.Console.WriteLine("resolution = "+field.Resolution+" dim="+field.Dim.Length+" vol="+field.CubeVolume+" area = "+field.CubeArea+" len = "+field.CubeLength+" Q = "+field.InitialQuantity);
+        		for(int si=0;si<field.Dim.Length;si++){
+        			System.Console.WriteLine("dim["+si+"]="+field.Dim[si]);
+        		}	
+        	}
 
             // *** TIME LOOP ***
             for (this.time = startTime; (this.time < this.parameters.SimulationLength && this.runningStatus); this.time += this.parameters.StepTime)
@@ -262,6 +271,8 @@ namespace MuCell.Model
                 // *** NUTRIENT FIELDS ***
                 foreach (NutrientField field in this.currentState.SimulationEnvironment.GetNutrientObjects())
                 {
+                	//DEBUG
+                	//check params at each step
                     field.DoTimeStep(this.time, this.parameters.StepTime);
                 }
 

@@ -24,12 +24,16 @@ namespace MuCell
             TestRigs.ErrorLog.InitErrorLog();
             TestRigs.ErrorLog.LogError("Error Log Begin. ");
 
+
+            //MuCell.TestRigs.TestOpenGL1.Begin();
+            MuCell.UnitTests.Model.TestNutrientField test = new MuCell.UnitTests.Model.TestNutrientField();
+            test.TestOffsets();
+
             ApplicationController app = new ApplicationController();
             app.run();
 
             View.OpenGL.GLTextures.UnloadTextures();
 
-            //MuCell.TestRigs.TestOpenGL1.Begin();
         }
     }
 }

@@ -60,8 +60,8 @@ namespace MuCell.Model.SBML.ExtracellularComponents
 
             float amount = attractant.GetNutrientLevel(cell.CellInstanceSpatialContext.Position);
 
-            cell.setSpeciesAmountInSimulation(speciesRef.species.ID,amount / 10 );
-            cell.setSpeciesAmount(speciesRef.species.ID, amount / 10);
+			cell.setSpeciesAmountInSimulation(speciesRef.species.ID,amount );
+            cell.setSpeciesAmount(speciesRef.species.ID, amount );
    
         }
 

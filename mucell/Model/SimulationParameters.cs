@@ -117,8 +117,11 @@ namespace MuCell.Model
         {
         	// Defaults
             this.environmentViewState = new MuCell.View.OpenGL.SpatialViewState();
-            this.stepTime = 0.01d;
-            this.simulationLength = 5d;
+            this.stepTime = 0.05d;
+            this.simulationLength = 400d;
+            // OLD DEFAULTS
+            //this.stepTime = 0.01d;
+            //this.simulationLength = 5d;
             this.snapshotInterval = 0d;
             this.InitialState = new StateSnapshot();
             this.timeSeries = new List<TimeSeries>();

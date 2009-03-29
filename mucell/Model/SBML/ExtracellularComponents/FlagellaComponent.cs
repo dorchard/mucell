@@ -113,26 +113,16 @@ namespace MuCell.Model.SBML.ExtracellularComponents
 				//System.Console.WriteLine("twiddling "+cell.GroupID);
 
                 //end of tumble
-                if (flage.TumbleCounter < tumbleDuration)
+                if (flage.TumbleCounter > tumbleDuration)
                 {
                 	System.Random random = cell.GetRandomObject();
                     cell.CellInstanceSpatialContext.Reorientate(new Vector3((float)(random.NextDouble() * 2 - 1),
                                                              (float)(random.NextDouble() * 2 - 1),
                                                              (float)(random.NextDouble() * 2 - 1)));
              
-                    
                     //up to 50% variance in next tumble duration
-                    
-                    //System.Console.WriteLine("tc - group = "+cell.GroupID+" Tc = "+flage.TumbleCounter.ToString());
-
-                } else {
-                	System.Random random = cell.GetRandomObject();
                 	flage.TumbleCounter = 0.0f + tumbleDuration*0.5f*(float)random.NextDouble();
-                	flage.TumbleState = false;
-                
-                }
-
-              
+                	flage.TumbleState = false;                }
             }
             // Run
             else
@@ -166,14 +156,24 @@ namespace MuCell.Model.SBML.ExtracellularComponents
                     cell.CellInstanceSpatialContext.Orientation.z * motiveStength * (float)timeStep));
 
 				// Adjust likelihood of twiddle based on chemical value
-                if (valueFromCircuit >= 1.0f)
+                if (valueFromCircuit >= 1.0)
                 {
-                    flage.TumbleLikelihood = 0.90f;
+                    flage.TumbleLikelihood = 0.9f;
                 }
                 else
                 {
                     flage.TumbleLikelihood = 0.1f;
-                }
+                }
+
+				// Adjust likelihood of twiddle based on chemical value
+                //if (valueFromCircuit >= 1.0)
+                //{
+                //    flage.TumbleLikelihood = 0.90f;
+                //}
+                //else
+                //{
+                //    flage.TumbleLikelihood = 0.1f;
+                //}
 
             }
 

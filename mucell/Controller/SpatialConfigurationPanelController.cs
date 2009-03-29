@@ -10,7 +10,7 @@ namespace MuCell.Controller
     /// <summary>
     /// Controller class for the spatial configuration panel, providing the operations that
     /// the user may invoke by interacting with the SpatialConfigurationPanelUI.
-    /// </summary>
+    /// </summary>e
     public class SpatialConfigurationPanelController : IControllable<ApplicationController>
     {
         //reference to parent controller

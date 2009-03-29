@@ -509,14 +509,14 @@ namespace MuCell.View
             this.fieldPropertiesGroupBox.Controls.Add(this.initialQuantityNumericUpDown);
             this.fieldPropertiesGroupBox.Location = new System.Drawing.Point(205, 6);
             this.fieldPropertiesGroupBox.Name = "fieldPropertiesGroupBox";
-            this.fieldPropertiesGroupBox.Size = new System.Drawing.Size(376, 162);
+            this.fieldPropertiesGroupBox.Size = new System.Drawing.Size(450, 162);
             this.fieldPropertiesGroupBox.TabIndex = 28;
             this.fieldPropertiesGroupBox.TabStop = false;
-            this.fieldPropertiesGroupBox.Text = "Nutrient Field Properties";
+            this.fieldPropertiesGroupBox.Text = "Concentration Field Properties";
             // 
             // viewNutrient
             // 
-            this.viewNutrient.Location = new System.Drawing.Point(324, 11);
+            this.viewNutrient.Location = new System.Drawing.Point(344, 11);
             this.viewNutrient.Name = "viewNutrient";
             this.viewNutrient.Size = new System.Drawing.Size(43, 25);
             this.viewNutrient.TabIndex = 25;
@@ -528,7 +528,7 @@ namespace MuCell.View
             // 
             this.resolutionHelper.BackColor = System.Drawing.Color.White;
             this.resolutionHelper.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.resolutionHelper.Location = new System.Drawing.Point(9, 94);
+            this.resolutionHelper.Location = new System.Drawing.Point(10, 94);
             this.resolutionHelper.Margin = new System.Windows.Forms.Padding(6);
             this.resolutionHelper.Multiline = true;
             this.resolutionHelper.Name = "resolutionHelper";
@@ -540,7 +540,7 @@ namespace MuCell.View
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(219, 68);
+            this.label6.Location = new System.Drawing.Point(240, 68);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 13);
             this.label6.TabIndex = 40;
@@ -554,7 +554,7 @@ namespace MuCell.View
             0,
             0,
             131072});
-            this.resolutoinNumericUpDown.Location = new System.Drawing.Point(313, 66);
+            this.resolutoinNumericUpDown.Location = new System.Drawing.Point(344, 66);
             this.resolutoinNumericUpDown.Maximum = new decimal(new int[] {
             8,
             0,
@@ -583,7 +583,7 @@ namespace MuCell.View
             0,
             0,
             65536});
-            this.nutrientsDistributionRadiusNumericUpDown.Location = new System.Drawing.Point(313, 40);
+            this.nutrientsDistributionRadiusNumericUpDown.Location = new System.Drawing.Point(344, 40);
             this.nutrientsDistributionRadiusNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -602,25 +602,25 @@ namespace MuCell.View
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(184, 42);
+            this.label15.Location = new System.Drawing.Point(205, 42);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(123, 13);
+            this.label15.Size = new System.Drawing.Size(180, 13);
             this.label15.TabIndex = 36;
             this.label15.Text = "Distribution Radius (mm):";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 17);
+            this.label14.Location = new System.Drawing.Point(12, 17);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(89, 13);
+            this.label14.Size = new System.Drawing.Size(100, 13);
             this.label14.TabIndex = 35;
             this.label14.Text = "Initial Distribution:";
             // 
             // initialDistributionComboBox
             // 
             this.initialDistributionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.initialDistributionComboBox.Location = new System.Drawing.Point(114, 14);
+            this.initialDistributionComboBox.Location = new System.Drawing.Point(135, 14);
             this.initialDistributionComboBox.Name = "initialDistributionComboBox";
             this.initialDistributionComboBox.Size = new System.Drawing.Size(201, 21);
             this.initialDistributionComboBox.TabIndex = 38;
@@ -630,7 +630,7 @@ namespace MuCell.View
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(31, 68);
+            this.label11.Location = new System.Drawing.Point(37, 68);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 13);
             this.label11.TabIndex = 32;
@@ -644,7 +644,7 @@ namespace MuCell.View
             0,
             0,
             65536});
-            this.diffusionRateNumericUpDown.Location = new System.Drawing.Point(114, 66);
+            this.diffusionRateNumericUpDown.Location = new System.Drawing.Point(135, 66);
             this.diffusionRateNumericUpDown.Maximum = new decimal(new int[] {
             50,
             0,
@@ -658,11 +658,11 @@ namespace MuCell.View
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 42);
+            this.label7.Location = new System.Drawing.Point(8, 42);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 13);
+            this.label7.Size = new System.Drawing.Size(140, 13);
             this.label7.TabIndex = 30;
-            this.label7.Text = "Initial Quatity (moles):";
+            this.label7.Text = "Quantity (moles E-6):";
             // 
             // initialQuantityNumericUpDown
             // 
@@ -672,9 +672,9 @@ namespace MuCell.View
             0,
             0,
             131072});
-            this.initialQuantityNumericUpDown.Location = new System.Drawing.Point(114, 40);
+            this.initialQuantityNumericUpDown.Location = new System.Drawing.Point(135, 40);
             this.initialQuantityNumericUpDown.Minimum = new decimal(new int[] {
-            1,
+            0,
             0,
             0,
             131072});
@@ -804,7 +804,7 @@ namespace MuCell.View
             this.RadiusNumericUpDown.Size = new System.Drawing.Size(64, 20);
             this.RadiusNumericUpDown.TabIndex = 15;
             this.RadiusNumericUpDown.Value = new decimal(new int[] {
-            125,
+            700,
             0,
             0,
             65536});
@@ -881,7 +881,7 @@ namespace MuCell.View
             this.PopulationNumericUpDown.Size = new System.Drawing.Size(64, 20);
             this.PopulationNumericUpDown.TabIndex = 0;
             this.PopulationNumericUpDown.Value = new decimal(new int[] {
-            25,
+            100,
             0,
             0,
             0});
@@ -1525,7 +1525,7 @@ namespace MuCell.View
                 DistributionComboBox.Items.Add(func);
             }
 
-            int index = DistributionComboBox.FindString("Normal");
+            int index = DistributionComboBox.FindString("Uniform");
             DistributionComboBox.SelectedIndex = index;
         }
 

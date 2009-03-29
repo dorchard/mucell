@@ -376,6 +376,7 @@
     <Compile Include="View\TimeSeriesRawDataViewer.Designer.cs">
       <DependentUpon>TimeSeriesRawDataViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UnitTests\Model\TestNutrientField.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="UnitTests\ecc00020.xml" />
