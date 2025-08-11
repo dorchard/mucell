@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the following metadata."
+title: "muCell – Interdisciplinary Research in Modelling and Simulation of Cell Spatial Behaviour"
+authors:
+  - family-names: Orchard
+    given-names: D
+  - family-names: Gover
+    given-names: J
+  - family-names: Herrington
+    given-names: L
+  - family-names: Lohr
+    given-names: J
+  - family-names: Stead
+    given-names: D
+  - family-names: Young
+    given-names: C
+  - family-names: Kalvala
+    given-names: S
+journal: "Reinvention: a Journal of Undergraduate Research"
+volume: 2
+issue: 1
+date-published: 2009-04
+doi: null
+url: null
